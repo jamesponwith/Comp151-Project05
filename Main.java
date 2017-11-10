@@ -1,13 +1,17 @@
-package com.booya;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        ArrayList list = new ArrayList();
+
     }
 
-    Object getFirst() {
+    Object getFirst(ArrayList list) {
 
+        return list;
     }
 
     Object getLast() {
@@ -19,7 +23,7 @@ public class Main {
     }
 
     void addAfter(int index, Object value) {
-
+        
     }
 
     Object set(int index, Object newValue) {
