@@ -1,9 +1,7 @@
 import java.util.*;
 
-public class ListTest
-{
-    public static void main(String[] args)
-    {
+public class ListTest {
+    public static void main(String[] args) {
         MyLinkedList<String> list0 = new MyLinkedList<String>();
         MyLinkedList<String> list1 = new MyLinkedList<String>();
         MyLinkedList<String> list2 = new MyLinkedList<String>();

@@ -4,7 +4,6 @@
  * Description: (a 1-4 sentences on what this program does)
  */
 
-
 public class MyLinkedList {
     // the Node class is a private inner class used (only) by the LinkedList class
     private class Node {
@@ -143,9 +142,16 @@ public class MyLinkedList {
     public void removeAll(Object value) {
         return;
     }
-    
+
+    @Override 
     public boolean equals(Object o) {
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 0;
+        return result;
     }
     
     public MyLinkedList split() {
