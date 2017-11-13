@@ -1,14 +1,14 @@
-/* Name: programName
- * Authors: yourName and yourPartnersName
+/* Name: James Ponwith and Patrick Hall
+ * Authors: James Ponwith and Patrick Hall
  * Date:  date
  * Description: (a 1-4 sentences on what this program does)
  */
 
-public class MyLinkedList {
+public class MyLinkedList<T> {
     // the Node class is a private inner class used (only) by the LinkedList class
-    private class Node {
+    private class Node<T> {
         private Object data;
-        private Node next;
+        private Node<T> next;
         
         public Node(Object a, Node n) {
             data = a;
@@ -116,6 +116,8 @@ public class MyLinkedList {
     }
     
     public Object getLast() {
+
+
         return null;
     }
     
