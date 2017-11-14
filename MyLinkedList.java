@@ -185,7 +185,8 @@ public class MyLinkedList<T> {
     }
     
     public MyLinkedList<T> clone() {
-        return null;
+        MyLinkedList<T> clone = this;
+        return clone;
     }
     
     public void removeAll(Object value) {
