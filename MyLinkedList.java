@@ -112,13 +112,23 @@ public class MyLinkedList<T> {
     // ------------------------  HW4 methods start here ------------------------
     
     public Object getFirst() {
-        return null;
+        if (first == null) {
+            System.out.println("Error - Linked List is empty");
+            return null;
+        }
+        return first;
     }
     
     public Object getLast() {
-
-
-        return null;
+        Node start = this.first;
+        if (start == null) {
+            System.out.println("Error - Linked List is empty");
+            return null;
+        }
+        while(start.next != null) {
+            start = start.next;
+        }
+        return start.next;
     }
     
     public void add(Object value) {
