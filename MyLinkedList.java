@@ -133,13 +133,25 @@ public class MyLinkedList<T> {
     
     public void addAfter(int index, Object value) {
 
+        Node start = this.first;
+        for(int counter = 0; counter < index; counter++) {
+            start = start.next;
+        }
 
-
-        return;
+        Node nextNode = start.next;
+        start.next = new Node(value, nextNode);
     }
     
     public Object set(int index, Object newValue) {
-        return null;
+
+        Node start = this.first;
+        for(int counter = 0; counter < index; counter++) {
+            start = start.next;
+        }
+        
+        start.data = newValue;
+
+        return start.data;
     }
     
     public int lastIndex(Object value) {
