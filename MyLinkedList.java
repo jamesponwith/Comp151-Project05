@@ -139,6 +139,7 @@ public class MyLinkedList<T> {
         }
 
         start.next = new Node(value, null);
+        length++;
     }
     
     public void addAfter(int index, Object value) {
@@ -154,6 +155,7 @@ public class MyLinkedList<T> {
 
         Node nextNode = start.next;
         start.next = new Node(value, nextNode);
+        length++;
     }
     
     public Object set(int index, Object newValue) {
