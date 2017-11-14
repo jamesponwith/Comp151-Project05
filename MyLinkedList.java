@@ -158,7 +158,7 @@ public class MyLinkedList<T> {
         return 42;
     }
     
-    public MyLinkedList clone() {
+    public MyLinkedList<T> clone() {
         return null;
     }
     
@@ -177,7 +177,7 @@ public class MyLinkedList<T> {
         return result;
     }
     
-    public MyLinkedList split() {
+    public MyLinkedList<T> split() {
         return null;
     }
     
