@@ -6,9 +6,9 @@
 
 public class MyLinkedList<T> {
     // the Node class is a private inner class used (only) by the LinkedList class
-    private class Node<T> {
+    private class Node {
         private Object data;
-        private Node<T> next;
+        private Node next;
         
         public Node(Object a, Node n) {
             data = a;
@@ -122,10 +122,19 @@ public class MyLinkedList<T> {
     }
     
     public void add(Object value) {
-        return;
+
+        Node start = this.first;
+        while(start.next != null) {
+            start = start.next;
+        }
+
+        start.next = new Node(value, null);
     }
     
     public void addAfter(int index, Object value) {
+
+
+
         return;
     }
     
