@@ -160,7 +160,6 @@ public class MyLinkedList<T> {
 
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
-            return null;
         }
 
         Node start = this.first;
