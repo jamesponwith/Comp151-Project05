@@ -148,10 +148,10 @@ public class MyLinkedList<T> {
         for(int counter = 0; counter < index; counter++) {
             start = start.next;
         }
-        
+        Object oldData = start.data;
         start.data = newValue;
 
-        return start.data;
+        return oldData;
     }
     
     public int lastIndex(Object value) {
