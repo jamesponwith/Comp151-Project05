@@ -174,12 +174,20 @@ public class MyLinkedList<T> {
     
     public int lastIndex(Object value) {
         Node start = this.first;
+        int lastOccur = -1;
 
         for(int counter = 0; counter < this.size(); counter++) {
+            if(start.data == value) {
+                lastOccur = counter;
+            }
             start = start.next;
         }
 
-        return 42;
+        if(lastOccur == -1) {
+            return -1;
+        }
+
+        return lastOccur;
     }
     
     public MyLinkedList<T> clone() {
@@ -187,7 +195,15 @@ public class MyLinkedList<T> {
     }
     
     public void removeAll(Object value) {
-        return;
+
+        Node start = this.first;
+        for(int counter = 0; counter < this.size(); counter++) {
+
+            if(start.next.data == value) {
+                start.next = start.next.next;
+            }
+            start = start.next;
+        }
     }
 
     @Override 
