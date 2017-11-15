@@ -149,13 +149,14 @@ public class MyLinkedList<T> {
         length++;
     }
     
+    // Passed
     public void addAfter(int index, Object value) {
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
         }
 
         Node start = this.first;
-        for(int counter = 0; counter < index - 1; counter++) {
+        for(int counter = 0; counter < index; counter++) {
             start = start.next;
         }
 
@@ -168,6 +169,7 @@ public class MyLinkedList<T> {
 
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
+            return null;
         }
 
         Node start = this.first;
