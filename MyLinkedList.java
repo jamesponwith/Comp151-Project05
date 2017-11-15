@@ -228,26 +228,33 @@ public class MyLinkedList<T> {
     }
 
     public MyLinkedList<T> split() {
-        if (length == 0) {
-            System.out.println("Linked List is empty");
-            return null;
+        /*
+        if (this.size() == 0) {
+            System.out.println("Cannot split");
+            return this;
         }
-        MyLinkedList<T> back = new MyLinkedList<T>();
         Node start = this.first;
-        int newLength = length / 2; 
-        for (int i = 0; i < newLength; i++) {
-            //return null;
+        for (int i = 0; i < (length / 2); i++) {
             start = start.next; 
         }
-        Node temp = start.next;
+        MyLinkedList<T> back = new MyLinkedList<>();
+
+        Node newNode = new Node(start.data, start.next);
         while (start.next != null) {
-            back.add(temp);
-            this.remove(temp);
+            if (back.size() == 0) {
+                back.addFirst(newNode);
+            }
+            else {
+                back.add(newNode);
+            }
             length--;
-            //temp = start.next;
+            start = start.next;
+            newNode = new Node(start.data, start.next);
         }
         this.set(length / 2, null);
         return back;
+        */
+        return null;
     }
     
     public void doubler() {
