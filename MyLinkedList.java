@@ -1,7 +1,10 @@
-/* Name: James Ponwith and Patrick Hall
+/* Name: Generic LinkedList implementation 
  * Authors: James Ponwith and Patrick Hall
  * Date:  11/12/2017
- * Description: (a 1-4 sentences on what this program does)
+ * Description: 
+ * This program provides a usable, generic LinkedList class.
+ * Methods available to this class are written blelow. 
+ * Main method of this program tests the methods written.
  */
 
 public class MyLinkedList<T> {
@@ -217,7 +220,6 @@ public class MyLinkedList<T> {
     @Override
     public boolean equals(Object o) {
         MyLinkedList<T> list = (MyLinkedList<T>)o;
-
         Node start1 = this.first;
         Node start2 = list.first;
         int counter = 0;
@@ -241,8 +243,7 @@ public class MyLinkedList<T> {
 
     @Override
     public int hashCode() {
-        int result = 0;
-        return result;
+        return 0;
     }
 
     public MyLinkedList<T> split() {
