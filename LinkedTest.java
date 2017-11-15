@@ -43,7 +43,7 @@ public class LinkedTest{
         listAddAfter1.add("node4"); 
         listAddAfter1.addAfter(2, "after 2");
         System.out.println("Add-after-2: " + listAddAfter1);
-
+        
 
         System.out.println("\nTesting set...");
         MyLinkedList<String> test = new MyLinkedList<String>();
@@ -65,7 +65,7 @@ public class LinkedTest{
         other.addAfter(2,"three.5");
         System.out.println((other.get(3).equals("three.5")?"PASSED":"**FAILED**"));
         System.out.println(other.size() + " " + other);
-        
+
         System.out.println("\nTesting lastIndex...");
         System.out.println((test.lastIndex("Salman")==0)?"PASSED":"**FAILED**");
         test.addFirst("Mark");
@@ -83,6 +83,10 @@ public class LinkedTest{
         System.out.println(another.size() + " " + another);
 
         System.out.println("\nTesting removeAll...");
+        other.add("three");
+        System.out.println(other);
+        other.removeAll("three");
+        System.out.println(other);
         //time for you to write some tests!
 
         System.out.println("\nTesting equals...");
@@ -107,8 +111,34 @@ public class LinkedTest{
         System.out.println("  7-element test/false = " + (!list0.equals(list4)?"PASSED":"**FAILED**"));
         System.out.println("  7-element test/false = " + (!list4.equals(list0)?"PASSED":"**FAILED**"));
 
+
         System.out.println("\nTesting split...");
-        MyLinkedList<String> result;
+        MyLinkedList<String> toSplit = new MyLinkedList<String>();
+        MyLinkedList<String> back = new MyLinkedList<String>();
+        
+        toSplit.add("node1");
+        toSplit.add("node2");
+        toSplit.add("node3");
+        toSplit.add("node4");
+
+
+        System.out.println("Before splitting:\n" + toSplit);
+        back = toSplit.split();
+        System.out.println("Front\n" + toSplit);
+        System.out.println("Back:\n" + back);
+
+
+        System.out.println("\nTesting doubler:\n");
+        MyLinkedList<String> toDouble = new MyLinkedList<String>();
+        toDouble.add("node1");
+        toDouble.add("node2");
+        toDouble.add("node3");
+        toDouble.add("node4");
+        System.out.println("Before doubling " + toDouble);
+        toDouble.doubler();
+        System.out.println("After doubling " + toDouble);
+
+        /*
         list0.clear();
         list1.clear();
         list1.add("node1");
@@ -160,5 +190,6 @@ public class LinkedTest{
         result = list6.split();
         System.out.println("  list " + list6.size() + " " + list6);
         System.out.println("  result " + result.size() + " " + result);
+        */
     }
 }

@@ -226,13 +226,12 @@ public class MyLinkedList<T> {
     }
 
     public MyLinkedList<T> split() {
-        /*
         if (this.size() == 0) {
             System.out.println("Cannot split");
             return this;
         }
         Node start = this.first;
-        for (int i = 0; i < (length / 2); i++) {
+        for (int i = 0; i < (this.size() / 2); i++) {
             start = start.next; 
         }
         MyLinkedList<T> back = new MyLinkedList<>();
@@ -245,18 +244,23 @@ public class MyLinkedList<T> {
             else {
                 back.add(newNode);
             }
-            length--;
             start = start.next;
             newNode = new Node(start.data, start.next);
         }
         this.set(length / 2, null);
         return back;
-        */
-        return null;
     }
     
     public void doubler() {
-        
+        Node start = this.first;
+        int pos = 0;
+        while (start.next != null) {
+            this.addAfter(pos, start.data);
+            start = start.next.next;
+            pos += 2;
+            length++;
+        }
+
     }
     
     public void sublist(int i, int j) {
