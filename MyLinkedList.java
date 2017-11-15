@@ -9,26 +9,26 @@ public class MyLinkedList<T> {
     private class Node {
         private Object data;
         private Node next;
-        
+
         public Node(Object a, Node n) {
             data = a;
             next = n;
         }
     }
-    
+
     private Node first;
     private int length;  // to enable an O(1) size method
-    
-    
+
+
     public MyLinkedList() {
         first = null;
         length = 0;  // added after considering the size() method
     }
-    
+
     public boolean isEmpty() {
         return (first == null);
     }
-    
+
     public void addFirst(Object d) {
         /* These two lines can be reduced to the single line which follows
          *   Node temp = first;
@@ -37,22 +37,22 @@ public class MyLinkedList<T> {
         first = new Node(d,first);
         length++;
     }
-    
+
     public int size() {
-     /*  This O(n) loop can be replaced by the O(1) return once we have the length field
-     int count = 0;
-     for (Node curr = first; curr != null; curr = curr.next)
-     count++;
-     return count;
-     */
+        /*  This O(n) loop can be replaced by the O(1) return once we have the length field
+            int count = 0;
+            for (Node curr = first; curr != null; curr = curr.next)
+            count++;
+            return count;
+            */
         return length;
     }
-    
+
     public void clear() {
         first = null;
         length = 0;
     }
-    
+
     public boolean contains(Object value) {
         for (Node curr = first; curr != null; curr = curr.next) {
             if (value.equals(curr.data)) {
@@ -62,7 +62,7 @@ public class MyLinkedList<T> {
         }
         return false;
     }
-    
+
     public Object get(int index) {
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
@@ -73,7 +73,7 @@ public class MyLinkedList<T> {
             curr = curr.next;
         return curr.data;
     }
-    
+
     public boolean remove(Object m) {
         if (isEmpty()) {
             return false;
@@ -87,7 +87,7 @@ public class MyLinkedList<T> {
         while (curr.next != null) {
             if (m.equals(curr.next.data)) {
                 // this implies that the data must have an overridden equals() method!
-                
+
                 curr.next = curr.next.next;
                 length--;
                 return true;
@@ -96,19 +96,19 @@ public class MyLinkedList<T> {
         }
         return false;
     }
-    
+
     public String toString() {
         StringBuilder result = new StringBuilder();  //String result = "";
- 
+
         for (Node curr = first; curr != null; curr = curr.next)
             result.append(curr.data + "->");  //result = result + curr.data + "->";
 
         result.append("[null]");
         return result.toString();   //return result + "[null]";
     }
-    
+
     // ------------------------  HW4 methods start here ------------------------
-    
+
     // Passed 
     public Object getFirst() {
         if (first == null) {
@@ -117,7 +117,7 @@ public class MyLinkedList<T> {
         }
         return first.data;
     }
-    
+
     // Passed 
     public Object getLast() {
         Node start = this.first;
@@ -130,7 +130,7 @@ public class MyLinkedList<T> {
         }
         return start.data;
     }
-    
+
     // Passed
     public void add(Object value) {
         Node start = this.first;
@@ -145,7 +145,7 @@ public class MyLinkedList<T> {
         start.next = newNode;
         length++;
     }
-    
+
     // Passed
     public void addAfter(int index, Object value) {
         if (index < 0 || index >= length) {
@@ -200,7 +200,7 @@ public class MyLinkedList<T> {
         MyLinkedList<T> clone = this;
         return clone;
     }
-    
+
     // Passed
     public void removeAll(Object value) {
         Node start = this.first;
@@ -265,22 +265,27 @@ public class MyLinkedList<T> {
         }
         add(start.data);
     }
-    
+
     public MyLinkedList<T> sublist(int i, int j) {
-       MyLinkedList<T> sub = new MyLinkedList<>(); 
-       Node start = this.first;
-       int pos = 0;
-       while(pos < i) { 
+        if ((i < 0 || i >= length) || (j < 0 || j >= length)) {
+            System.out.println("Index of out of range");
+            return null;
+        }
+        MyLinkedList<T> sub = new MyLinkedList<>(); 
+        Node start = this.first;
+        int pos = 0;
+        while(pos < i) { 
             start = start.next;
-       }
-       sub.add(start);
-       while(start.next != null) {
-           sub.add(start);
-           start = start.next;
-       }
-       return sub;
+            pos++;
+        }
+        sub.add(start);
+        while(start.next != null) {
+            sub.add(start);
+            start = start.next;
+        }
+        return sub;
     }
-    
+
     public static void main(String[] args) {
         // here is where you can create some lists (use lists of Strings
         // to test) and thoroughly test each of your new methods
