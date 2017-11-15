@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ListTest {
+public class LinkedTest{
     public static void main(String[] args) {
         MyLinkedList<String> list0 = new MyLinkedList<String>();
         MyLinkedList<String> list1 = new MyLinkedList<String>();
@@ -34,7 +34,17 @@ public class ListTest {
         System.out.println("3-element list: " + list3);
         list4.add("node1"); list4.add("node2"); list4.add("node3"); list4.add("node4");
         System.out.println("4-element list: " + list4);
-        
+
+        System.out.println("\nTesting addAfter...");
+        MyLinkedList<String> listAddAfter1 = new MyLinkedList<String>();
+        listAddAfter1.add("node1"); 
+        listAddAfter1.add("node2"); 
+        listAddAfter1.add("node3"); 
+        listAddAfter1.add("node4"); 
+        listAddAfter1.addAfter(2, "after 2");
+        System.out.println("Add-after-2: " + listAddAfter1);
+
+
         System.out.println("\nTesting set...");
         MyLinkedList<String> test = new MyLinkedList<String>();
         System.out.println("  empty list test = " + ((test.set(2,"bad") == null)?"PASSED":"**FAILED**"));
