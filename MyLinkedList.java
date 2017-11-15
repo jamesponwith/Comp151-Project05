@@ -111,14 +111,16 @@ public class MyLinkedList<T> {
     
     // ------------------------  HW4 methods start here ------------------------
     
+    // Passed 
     public Object getFirst() {
         if (first == null) {
             System.out.println("Error - Linked List is empty");
             return null;
         }
-        return first;
+        return first.data;
     }
     
+    // Passed 
     public Object getLast() {
         Node start = this.first;
         if (start == null) {
@@ -128,28 +130,32 @@ public class MyLinkedList<T> {
         while(start.next != null) {
             start = start.next;
         }
-        return start.next;
+        return start.data;
     }
     
+    // Passed
     public void add(Object value) {
-
         Node start = this.first;
+        if (start == null) {
+            System.out.println("added\n");
+            addFirst(value);
+            return;
+        }
         while(start.next != null) {
             start = start.next;
         }
-
-        start.next = new Node(value, null);
+        Node newNode = new Node(value, null);
+        start.next = newNode;
         length++;
     }
     
     public void addAfter(int index, Object value) {
-
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
         }
 
         Node start = this.first;
-        for(int counter = 0; counter < index; counter++) {
+        for(int counter = 0; counter < index - 1; counter++) {
             start = start.next;
         }
 
@@ -219,9 +225,28 @@ public class MyLinkedList<T> {
         int result = 0;
         return result;
     }
-    
+
     public MyLinkedList<T> split() {
-        return null;
+        if (length == 0) {
+            System.out.println("Linked List is empty");
+            return null;
+        }
+        MyLinkedList<T> back = new MyLinkedList<>();
+        Node start = this.first;
+        int newLength = length / 2; 
+        for (int i = 0; i < newLength + 1; i++) {
+            //return null;
+            start = start.next; 
+        }
+        Node temp = start.next;
+        while (start.next != null) {
+            back.add(temp);
+            this.remove(temp);
+            length--;
+            //temp = start.next;
+        }
+        this.set(length / 2, null);
+        return back;
     }
     
     public void doubler() {
