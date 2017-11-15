@@ -68,7 +68,6 @@ public class MyLinkedList<T> {
             System.out.println("Index of " + index + " out of range");
             return null;
         }
-        
         Node curr = first;
         for (int i = 0; i < index; i++)
             curr = curr.next;
@@ -76,15 +75,14 @@ public class MyLinkedList<T> {
     }
     
     public boolean remove(Object m) {
-        if (isEmpty())
+        if (isEmpty()) {
             return false;
-        
+        }
         if (m.equals(first.data)) {
             first = first.next;
             length--;
             return true;
         }
-        
         Node curr = first;
         while (curr.next != null) {
             if (m.equals(curr.next.data)) {
@@ -163,9 +161,8 @@ public class MyLinkedList<T> {
         start.next = new Node(value, nextNode);
         length++;
     }
-    
+    // Passed    
     public Object set(int index, Object newValue) {
-
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
             return null;
@@ -180,7 +177,7 @@ public class MyLinkedList<T> {
 
         return oldData;
     }
-    
+    // Passed 
     public int lastIndex(Object value) {
         Node start = this.first;
         int lastOccur = -1;
@@ -198,21 +195,22 @@ public class MyLinkedList<T> {
 
         return lastOccur;
     }
-    
+    // Check  
     public MyLinkedList<T> clone() {
         MyLinkedList<T> clone = this;
         return clone;
     }
     
+    // Passed
     public void removeAll(Object value) {
-
         Node start = this.first;
-        for(int counter = 0; counter < this.size(); counter++) {
-
-            if(start.next.data == value) {
+        while (start.next != null) {
+            if (start.next.data == value) {
                 start.next = start.next.next;
             }
-            start = start.next;
+            else {
+                start = start.next;
+            }
         }
     }
 
