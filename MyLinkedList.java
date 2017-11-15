@@ -250,8 +250,11 @@ public class MyLinkedList<T> {
         this.set(length / 2, null);
         return back;
     }
-    
+    // Pass 
     public void doubler() {
+        if (length == 0) {
+            System.out.println("List is empty");
+        }
         Node start = this.first;
         int pos = 0;
         while (start.next != null) {
@@ -260,11 +263,22 @@ public class MyLinkedList<T> {
             pos += 2;
             length++;
         }
-
+        add(start.data);
     }
     
-    public void sublist(int i, int j) {
-        
+    public MyLinkedList<T> sublist(int i, int j) {
+       MyLinkedList<T> sub = new MyLinkedList<>(); 
+       Node start = this.first;
+       int pos = 0;
+       while(pos < i) { 
+            start = start.next;
+       }
+       sub.add(start);
+       while(start.next != null) {
+           sub.add(start);
+           start = start.next;
+       }
+       return sub;
     }
     
     public static void main(String[] args) {
