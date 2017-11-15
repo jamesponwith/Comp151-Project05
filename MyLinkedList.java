@@ -214,9 +214,29 @@ public class MyLinkedList<T> {
         }
     }
 
-    @Override 
+    @Override
     public boolean equals(Object o) {
-        return false;
+        MyLinkedList<T> list = (MyLinkedList<T>)o;
+
+        Node start1 = this.first;
+        Node start2 = list.first;
+        int counter = 0;
+        if(((MyLinkedList<T>) o).length == list.length) {
+            while(counter < list.length) {
+                if(start1.data == start2.data) {
+                    start1 = start1.next;
+                    start2 = start2.next;
+                }
+                else {
+                    return false;
+                }
+                counter++;
+            }
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
