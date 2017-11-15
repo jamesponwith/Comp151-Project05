@@ -137,7 +137,6 @@ public class MyLinkedList<T> {
     public void add(Object value) {
         Node start = this.first;
         if (start == null) {
-            System.out.println("added\n");
             addFirst(value);
             return;
         }
@@ -233,10 +232,10 @@ public class MyLinkedList<T> {
             System.out.println("Linked List is empty");
             return null;
         }
-        MyLinkedList<T> back = new MyLinkedList<>();
+        MyLinkedList<T> back = new MyLinkedList<T>();
         Node start = this.first;
         int newLength = length / 2; 
-        for (int i = 0; i < newLength + 1; i++) {
+        for (int i = 0; i < newLength; i++) {
             //return null;
             start = start.next; 
         }
