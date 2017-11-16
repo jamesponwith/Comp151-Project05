@@ -702,7 +702,6 @@ public class MyLinkedList<T> {
             System.out.println("Null list test: \t" + " PASSED");
         }
 
-
         /*====================================================*/
 
         System.out.println("\n\nsublist() Test:");
