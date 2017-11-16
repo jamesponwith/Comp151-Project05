@@ -492,7 +492,7 @@ public class MyLinkedList<T> {
         System.out.println("\n\nclone() Test:");
         System.out.println("------------------------------------");
 
-        LinkedList<Integer> list = new LinkedList<>();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
 
         list.add(1);
         list.add(2);
@@ -501,14 +501,15 @@ public class MyLinkedList<T> {
         list.add(5);
         list.add(6);
 
-        LinkedList<Integer> listClone = new LinkedList<>();
+        System.out.println("List: \t\t" + list);
+        MyLinkedList<Integer> listClone = new MyLinkedList<>();
         listClone = list.clone();
+        System.out.println("Cloned List: \t\t" + listClone);
+
 
         /*====================================================*/
 
         System.out.println("\n\nremoveAll() Test:");
         System.out.println("------------------------------------");
-
-
     }
 }
