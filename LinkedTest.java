@@ -140,7 +140,6 @@ public class LinkedTest{
         toDouble.doubler();
         System.out.println("After doubling " + toDouble);
 
-<<<<<<< HEAD
 
         System.out.println("\nTesting sublist:\n");
         MyLinkedList<String> sub = new MyLinkedList<String>();
