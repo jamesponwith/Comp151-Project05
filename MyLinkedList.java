@@ -400,6 +400,10 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
 
+        System.out.print("\nTest for null list: \t");
+        MyLinkedList<String> emptyList = new MyLinkedList<String>();
+        System.out.print(emptyList.getFirst());
+
         /*=====================================================*/
 
         System.out.println("\n\ngetLast() Test:");
@@ -417,6 +421,10 @@ public class MyLinkedList<T> {
         System.out.println("Test 1:\t\t" + (gf1.getLast() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf3.getLast() == "node3" ? "PASSED" : "FAILED"));
+
+        System.out.print("\nTest for null list: \t");
+        System.out.print(emptyList.getLast());
+
         /*====================================================*/
 
         System.out.println("\n\nadd() Test:");
@@ -498,6 +506,7 @@ public class MyLinkedList<T> {
         System.out.println("List before setting: \t\t" + af2);
         af2.set(index, "2.5");
         System.out.println("List after setting: \t\t" + af2);
+        System.out.println(" ");
 
         System.out.println("Test for out of bounds index (index -1): \t" + af2.set(-1, 45));
         System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
