@@ -400,9 +400,9 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
 
-        System.out.print("\nTest for null list: \t");
         MyLinkedList<String> emptyList = new MyLinkedList<String>();
-        System.out.print(emptyList.getFirst());
+        System.out.println();
+        System.out.println("Test for null list:\t\t" + (emptyList.getLast() == "node3" ? "PASSED" : "FAILED"));
 
         /*=====================================================*/
 
@@ -422,8 +422,8 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf3.getLast() == "node3" ? "PASSED" : "FAILED"));
 
-        System.out.print("\nTest for null list: \t");
-        System.out.print(emptyList.getLast());
+        System.out.println();
+        System.out.println("Test for null list:\t\t" + (emptyList.getLast() == "node3" ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
@@ -518,8 +518,10 @@ public class MyLinkedList<T> {
 
         System.out.println("Result");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
-        System.out.println("Test for out of bounds index (index -1): \t" + af2.set(-1, 45));
-        System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
+
+        MyLinkedList<String> testList = new MyLinkedList<String>();
+        System.out.println("Test for out of bounds index (index -1): \t" + testList.set(-3, 45));
+        System.out.println("Test for out of bounds index (index 50): \t" + testList.set(50, 45));
 
         /*====================================================*/
 
@@ -676,5 +678,8 @@ public class MyLinkedList<T> {
 
         System.out.println("Original list: \t" + subList);
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
+
+        System.out.println(" ");
+        System.out.println("\nTest for invalid indexes: " + (subList.sublist(30, 40))) ? "PASSED" : "FAILED");
     }
 }
