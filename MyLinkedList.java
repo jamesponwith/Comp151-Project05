@@ -496,12 +496,16 @@ public class MyLinkedList<T> {
         System.out.println("------------------------------------");
         System.out.println("Testing for value of 2");
         System.out.println("List: \t\t" + af2);
-        int last = af2.lastIndex("2");
-        System.out.println("Last index: " + last); 
+        int last1 = af2.lastIndex("2");
+        System.out.println("Last index: " + last1); 
         af2.add("2");
         System.out.println("List: \t\t" + af2);
-        last = af2.lastIndex("2");
-        System.out.println("Last index: " + last); 
+        int last2 = af2.lastIndex("2");
+        System.out.println("Last index: " + last2); 
+
+        System.out.println("Results");
+        System.out.println("Test 1 " + ((last1 == 1) ? "PASSED" : "FAILED"));
+        System.out.println("Test 2 " + ((last2 == 5) ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
