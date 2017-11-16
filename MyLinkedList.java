@@ -476,6 +476,14 @@ public class MyLinkedList<T> {
 
         System.out.println("\n\nlastIndex() Test:");
         System.out.println("------------------------------------");
+        System.out.println("Testing for value of 2");
+        System.out.println("List: \t\t" + af2);
+        int last = af2.lastIndex("2");
+        System.out.println("Last index: " + last); 
+        af2.add("2");
+        System.out.println("List: \t\t" + af2);
+        last = af2.lastIndex("2");
+        System.out.println("Last index: " + last); 
 
         /*====================================================*/
 
