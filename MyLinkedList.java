@@ -164,6 +164,7 @@ public class MyLinkedList<T> {
     public void addAfter(int index, Object value) {
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
+            return;
         }
 
         Node start = this.first;
