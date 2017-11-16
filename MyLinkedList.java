@@ -225,15 +225,17 @@ public class MyLinkedList<T> {
      * Creates a shallow copy of this list
      */
     public MyLinkedList<T> clone() {
-        MyLinkedList<T> clone = this;
+        MyLinkedList<T> clone = new MyLinkedList<T>();
         Node start = this.first;
-        Node nodeCopy = new Node(start.data, null);
 
+        //clone.add(nodeCopy.data);
         while (start.next != null) {
+            Node nodeCopy = new Node(start.data, start.next);
+            clone.add(nodeCopy.data);
             start = start.next;
-            nodeCopy.next = new Node(start.data, null);
         }
-
+        Node nodeCopy = new Node(start.data, null);
+        clone.add(nodeCopy.data);
         return clone;
     }
 
