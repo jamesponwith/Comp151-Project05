@@ -311,7 +311,7 @@ public class MyLinkedList<T> {
 
         while (start.next != null) {
             Node newNode = new Node(start.data, start.next);
-            back.add(newNode);
+            back.add(newNode.data);
             start = start.next;
         }
 
@@ -402,7 +402,7 @@ public class MyLinkedList<T> {
         System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
 
         MyLinkedList<String> emptyList = new MyLinkedList<String>();
-        System.out.println("Test for null list:\t\t" + (emptyList.getFirst() == "node3" ? "PASSED" : "FAILED"));
+        System.out.println("Test for null list:\t\t" + ((emptyList.getFirst() == null) ? "PASSED" : "FAILED"));
 
         /*=====================================================*/
 
@@ -422,7 +422,7 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf3.getLast() == "node3" ? "PASSED" : "FAILED"));
 
-        System.out.println("Test for null list:\t\t" + (emptyList.getLast() == "node3" ? "PASSED" : "FAILED"));
+        System.out.println("Test for null list:\t\t" + (emptyList.getLast() == null ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
@@ -528,15 +528,17 @@ public class MyLinkedList<T> {
         System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
 
         Integer setInt = 45;
-        System.out.println("Result");
+        System.out.println("Results\n");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
 
         System.out.println("Index -1 test:\t\t" + (!(af2.get(-1) == setInt) ? "PASSED" : "FAILED"));
-        System.out.println("Index 50 test:\t\t" + (!(af2.get(-1) == setInt) ? "PASSED" : "FAILED"));
+        System.out.println("Index 50 test:\t\t" + (!(af2.get(50) == setInt) ? "PASSED" : "FAILED"));
 
+        /*
         MyLinkedList<String> testList = new MyLinkedList<String>();
         System.out.println("Test for out of bounds index (index -1): \t" + testList.set(-3, 45));
         System.out.println("Test for out of bounds index (index 50): \t" + testList.set(50, 45));
+        */
 
         /*====================================================*/
 
@@ -702,7 +704,6 @@ public class MyLinkedList<T> {
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
 
         boolean sublistFail = false;
-
         try{
             if(subList.sublist(30, 40) == null) {
                 sublistFail = false;

@@ -162,7 +162,7 @@ public class LinkedTest{
 
         System.out.println(list.subList(2, 5));
 
-        /*
+        MyLinkedList<String> result = new MyLinkedList<>();
         list0.clear();
         list1.clear();
         list1.add("node1");
@@ -214,6 +214,5 @@ public class LinkedTest{
         result = list6.split();
         System.out.println("  list " + list6.size() + " " + list6);
         System.out.println("  result " + result.size() + " " + result);
-        */
     }
 }
