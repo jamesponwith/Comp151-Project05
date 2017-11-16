@@ -304,7 +304,7 @@ public class MyLinkedList<T> {
     public MyLinkedList<T> split() {
         int middle;
         if (this.size() % 2 == 0) {
-            middle = this.size() / 2 - 1;
+            middle = (this.size() / 2) - 1;
         }
         else {
             middle = this.size() / 2;
@@ -320,9 +320,10 @@ public class MyLinkedList<T> {
         MyLinkedList<T> back = new MyLinkedList<>();
 
         while (start.next != null) {
+            start = start.next;
             Node newNode = new Node(start.data, start.next);
             back.add(newNode.data);
-            start = start.next;
+
         }
 
         Node end = this.first;
