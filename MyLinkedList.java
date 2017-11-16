@@ -486,9 +486,13 @@ public class MyLinkedList<T> {
         index = 2;
         System.out.println("index to set: " + index);
         System.out.println("set value: " + 2.5);
-        System.out.println("List beofre setting: \t\t" + af2);
+        System.out.println("List before setting: \t\t" + af2);
         af2.set(index, "2.5");
         System.out.println("List after setting: \t\t" + af2);
+
+        System.out.println("Test for out of bounds index (index -1): \t" + af2.set(-1, 45));
+        System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
+
 
         /*====================================================*/
 
@@ -633,7 +637,6 @@ public class MyLinkedList<T> {
         System.out.println("\n\nsublist() Test:");
         System.out.println("------------------------------------");
 
-
         MyLinkedList<Integer> subList = new MyLinkedList<>();
         MyLinkedList<Integer> subList2 = new MyLinkedList<>();
 
@@ -646,7 +649,5 @@ public class MyLinkedList<T> {
 
         System.out.println("Original list: \t" + subList);
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
-
-
     }
 }
