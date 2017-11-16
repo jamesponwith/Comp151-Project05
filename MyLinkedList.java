@@ -396,15 +396,6 @@ public class MyLinkedList<T> {
         System.out.println("3-element list: \t" + gf3);
         System.out.println("First element: \t\t" + gf3.getFirst());
         
-        if (gf1.getFirst().equals("node1")) {
-            test1 = true;
-        }
-        if (gf2.getFirst().equals("node1")) {
-            test2 = true;
-        }
-        if (gf2.getFirst().equals("node1")) {
-            test2 = true;
-        }
         System.out.println("Test 1:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 2:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
@@ -423,6 +414,9 @@ public class MyLinkedList<T> {
         System.out.println("3-element list: \t" + gf3);
         System.out.println("Last element: \t\t" + gf3.getLast());
 
+        System.out.println("Test 1:\t\t" + (gf1.getLast() == "node1" ? "PASSED" : "FAILED"));
+        System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
+        System.out.println("Test 3:\t\t" + (gf3.getLast() == "node3" ? "PASSED" : "FAILED"));
         /*====================================================*/
 
         System.out.println("\n\nadd() Test:");
@@ -441,6 +435,9 @@ public class MyLinkedList<T> {
         gf3.add("added");
         System.out.println("After adding: \t\t" + gf3);
 
+        System.out.println("Test 1:\t\t" + (gf1.getLast() == "added" ? "PASSED" : "FAILED"));
+        System.out.println("Test 2:\t\t" + (gf2.getLast() == "added" ? "PASSED" : "FAILED"));
+        System.out.println("Test 3:\t\t" + (gf3.getLast() == "added" ? "PASSED" : "FAILED"));
         /*====================================================*/
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
