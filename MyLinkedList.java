@@ -628,5 +628,25 @@ public class MyLinkedList<T> {
         doubler1.doubler();
         System.out.println("After doubling:\t\t" + doubler1);
 
+        /*====================================================*/
+
+        System.out.println("\n\nsublist() Test:");
+        System.out.println("------------------------------------");
+
+
+        MyLinkedList<Integer> subList = new MyLinkedList<>();
+        MyLinkedList<Integer> subList2 = new MyLinkedList<>();
+
+        subList.add(1);
+        subList.add(2);
+        subList.add(3);
+        subList.add(4);
+        subList.add(5);
+        subList.add(6);
+
+        System.out.println("Original list: \t" + subList);
+        System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
+
+
     }
 }
