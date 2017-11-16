@@ -435,9 +435,6 @@ public class MyLinkedList<T> {
         gf3.add("added");
         System.out.println("After adding: \t\t" + gf3);
 
-        System.out.println("Test 1:\t\t" + (gf1.getLast() == "added" ? "PASSED" : "FAILED"));
-        System.out.println("Test 2:\t\t" + (gf2.getLast() == "added" ? "PASSED" : "FAILED"));
-        System.out.println("Test 3:\t\t" + (gf3.getLast() == "added" ? "PASSED" : "FAILED"));
         /*====================================================*/
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
@@ -573,8 +570,8 @@ public class MyLinkedList<T> {
         System.out.println("List 2\t\t" + equals2);
         System.out.println("List 3\t\t" + equals3);
 
-        System.out.println("\nlist1.equals(list2) = " + equals1.equals(equals2));
-        System.out.println("\nlist1.equals(list3) = " + equals1.equals(equals3));
+        System.out.println("\nlist1.equals(list2) = " + ((equals1.equals(equals2)) ? "PASSED" : "FAILED"));
+        System.out.println("\nlist1.equals(list3) != " + (!(equals1.equals(equals3)) ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
@@ -608,6 +605,8 @@ public class MyLinkedList<T> {
 
         System.out.println("List3 after splitting: \t\t" + split3);
         System.out.println("List4 after splitting: \t\t" + split4);
+
+        System.out.println("Results\n");
 
         /*====================================================*/
 
