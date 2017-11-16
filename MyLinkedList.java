@@ -443,6 +443,11 @@ public class MyLinkedList<T> {
         gf3.add("added");
         System.out.println("After adding: \t\t" + gf3);
 
+        System.out.println("Results:");
+        System.out.println("1-element test:\t" + ((gf1.getLast() == "added") ? "PASSED" : "FAILED"));
+        System.out.println("2-element test:\t" + ((gf2.getLast() == "added") ? "PASSED" : "FAILED"));
+        System.out.println("3-element test:\t" + ((gf3.getLast() == "added") ? "PASSED" : "FAILED"));
+
         /*====================================================*/
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
@@ -486,6 +491,11 @@ public class MyLinkedList<T> {
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
 
+        int indexT = 1;
+        System.out.println("Results");
+        System.out.println("List 1 Test\t\t" + ((af1.get(indexT) == "added")? "PASSED" : "FAILED"));
+        System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
+        System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
         try {
             System.out.println("\nTest for out of bounds index (index -1): \t");
             af2.addAfter(-1, 45);
@@ -508,9 +518,10 @@ public class MyLinkedList<T> {
         System.out.println("List after setting: \t\t" + af2);
         System.out.println(" ");
 
+        System.out.println("Result");
+        System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
         System.out.println("Test for out of bounds index (index -1): \t" + af2.set(-1, 45));
         System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
-
 
         /*====================================================*/
 
