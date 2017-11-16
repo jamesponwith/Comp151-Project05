@@ -292,12 +292,19 @@ public class MyLinkedList<T> {
      * a new list which contains the second half of the list
      */
     public MyLinkedList<T> split() {
+        int middle;
+        if (this.size() % 2 == 0) {
+            middle = this.size() / 2 - 1;
+        }
+        else {
+            middle = this.size() / 2;
+        }
         if (this.size() == 0) {
             System.out.println("Cannot split");
             return this;
         }
         Node start = this.first;
-        for (int i = 0; i < (this.size() / 2); i++) {
+        for (int i = 0; i < middle; i++) {
             start = start.next; 
         }
         MyLinkedList<T> back = new MyLinkedList<>();
@@ -308,7 +315,7 @@ public class MyLinkedList<T> {
             start = start.next;
         }
         Node end = this.first;
-        for (int i = 0; i < (this.size() / 2); i++) {
+        for (int i = 0; i < middle; i++) {
             end = end.next;
         }
         end.next = null;
@@ -556,5 +563,38 @@ public class MyLinkedList<T> {
 
         System.out.println("\nlist1.equals(list2) = " + equals1.equals(equals2));
         System.out.println("\nlist1.equals(list3) = " + equals1.equals(equals3));
+
+        /*====================================================*/
+
+        System.out.println("\n\nsplit() Test:");
+        System.out.println("------------------------------------");
+
+        MyLinkedList<String> split1 = new MyLinkedList<String>();
+        MyLinkedList<String> split2 = new MyLinkedList<String>();
+        MyLinkedList<String> split3 = new MyLinkedList<String>();
+        MyLinkedList<String> split4 = new MyLinkedList<String>();
+
+        split1.add("node1");
+        split1.add("node2");
+        split1.add("node3");
+        split1.add("node4");
+        
+        System.out.println("List1 before splitting: \t" + split1);
+        split2 = split1.split();
+
+        System.out.println("List1 after splitting: \t\t" + split1);
+        System.out.println("List2 after splitting: \t\t" + split2);
+
+        split3.add("node1");
+        split3.add("node2");
+        split3.add("node3");
+        split3.add("node4");
+        split3.add("node5");
+
+        System.out.println("List3 before splitting: \t" + split3);
+        split4 = split3.split();
+
+        System.out.println("List3 after splitting: \t\t" + split3);
+        System.out.println("List4 after splitting: \t\t" + split4);
     }
 }
