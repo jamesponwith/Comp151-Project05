@@ -623,5 +623,6 @@ public class MyLinkedList<T> {
         System.out.println("Before doubling:\t" + doubler1);
         doubler1.doubler();
         System.out.println("After doubling:\t\t" + doubler1);
+
     }
 }
