@@ -129,7 +129,7 @@ public class LinkedTest{
         String backString = back.toString();
         System.out.println("Back:\n" + backString);
 
-        /*
+
         System.out.println("\nTesting doubler:\n");
         MyLinkedList<String> toDouble = new MyLinkedList<String>();
         toDouble.add("node1");
