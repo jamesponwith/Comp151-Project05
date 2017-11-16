@@ -69,7 +69,7 @@ public class MyLinkedList<T> {
 
     public Object get(int index) {
         if (index < 0 || index >= length) {
-            System.out.println("Index of " + index + " out of range");
+            //System.out.println("Index of " + index + " out of range");
             return null;
         }
         Node curr = first;
@@ -399,6 +399,8 @@ public class MyLinkedList<T> {
 
         MyLinkedList<String> emptyList = new MyLinkedList<String>();
 
+        System.out.println("\nTesting empty list: ");
+
         boolean firstFail = false;
         if(emptyList.getFirst() == null) {
             firstFail = true;
@@ -426,10 +428,15 @@ public class MyLinkedList<T> {
         System.out.println("3-element list: \t" + gf3);
         System.out.println("Last element: \t\t" + gf3.getLast());
 
+        System.out.println("\nTesting empty list: ");
+
         boolean lastFail = false;
         if(emptyList.getLast() == null) {
             lastFail = true;
         }
+
+        System.out.println(" ");
+        System.out.println("Results: ");
 
         System.out.println("Test 1:\t\t" + (gf1.getLast() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
@@ -521,9 +528,6 @@ public class MyLinkedList<T> {
         System.out.println("Invalid index test (Index -7):\t\t" + (!(emptyList.get(indexError-9) == "added")? "PASSED" : "FAILED"));
         System.out.println("Invalid index test (Index 200):\t\t" + (!(emptyList.get(indexError+198) == "added")? "PASSED" : "FAILED"));
 
-
-
-
         /*====================================================*/
 
         System.out.println("\n\nset() Test:");
@@ -537,12 +541,16 @@ public class MyLinkedList<T> {
         System.out.println("List after setting: \t\t" + af2);
         System.out.println(" ");
 
-        System.out.println("Result");
+        MyLinkedList<String> testList = new MyLinkedList<String>();
+        System.out.println("Testing out of bounds indexes: ");
+        testList.set(-50, 45);
+        testList.set(50, 45);
+
+        System.out.println("\nResult");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
 
-        MyLinkedList<String> testList = new MyLinkedList<String>();
-        System.out.println("Test for out of bounds index (index -1): \t" + testList.set(-3, 45));
-        System.out.println("Test for out of bounds index (index 50): \t" + testList.set(50, 45));
+        System.out.println("Test index 50: \t\t" + ((testList.get(50) == null) ? "PASSED" : "FAILED"));
+        System.out.println("Test index -50: \t" + ((testList.get(50) == null) ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
@@ -557,7 +565,7 @@ public class MyLinkedList<T> {
         int last2 = af2.lastIndex("2");
         System.out.println("Last index: " + last2); 
 
-        System.out.println("Results");
+        System.out.println("\nResults");
         System.out.println("Test 1 " + ((last1 == 1) ? "PASSED" : "FAILED"));
         System.out.println("Test 2 " + ((last2 == 5) ? "PASSED" : "FAILED"));
 
@@ -664,7 +672,7 @@ public class MyLinkedList<T> {
         System.out.println("List3 after splitting: \t\t" + split3);
         System.out.println("List4 after splitting: \t\t" + split4);
 
-        System.out.println("Results\n");
+        System.out.println("\nResults\n");
 
         /*====================================================*/
 
@@ -709,6 +717,7 @@ public class MyLinkedList<T> {
 
         boolean sublistFail = false;
 
+        System.out.println("Test invalid indexes (30 and 40): ");
         try{
             if(subList.sublist(30, 40) == null) {
                 sublistFail = true;
@@ -718,7 +727,7 @@ public class MyLinkedList<T> {
             }
 
         }catch(Exception e){
-            System.out.println("Null list test: \t" + "PASSED");
+            System.out.println("\nNull list test: \t" + "PASSED");
         }
 
         System.out.println("Index out of bounds test: \t" + (sublistFail ? "PASSED" : "FAILED"));
