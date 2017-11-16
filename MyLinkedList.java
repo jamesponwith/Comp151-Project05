@@ -488,6 +488,14 @@ public class MyLinkedList<T> {
         System.out.println("List 1 Test\t\t" + ((af1.get(indexT) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
+        try {
+            System.out.println("\nTest for out of bounds index (index -1): \t");
+            af2.addAfter(-1, 45);
+            System.out.println("\nTest for out of bounds index (index 50): \t");
+            af2.addAfter(50, 45);
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         /*====================================================*/
 
@@ -497,12 +505,14 @@ public class MyLinkedList<T> {
         index = 2;
         System.out.println("index to set: " + index);
         System.out.println("set value: " + 2.5);
-        System.out.println("List beofre setting: \t\t" + af2);
+        System.out.println("List before setting: \t\t" + af2);
         af2.set(index, "2.5");
         System.out.println("List after setting: \t\t" + af2);
 
         System.out.println("Result");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
+        System.out.println("Test for out of bounds index (index -1): \t" + af2.set(-1, 45));
+        System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
 
         /*====================================================*/
 
@@ -646,7 +656,6 @@ public class MyLinkedList<T> {
 
         System.out.println("\n\nsublist() Test:");
         System.out.println("------------------------------------");
-
 
         MyLinkedList<Integer> subList = new MyLinkedList<>();
         MyLinkedList<Integer> subList2 = new MyLinkedList<>();
