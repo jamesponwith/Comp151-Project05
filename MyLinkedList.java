@@ -22,7 +22,6 @@ public class MyLinkedList<T> {
     private Node first;
     private int length;  // to enable an O(1) size method
 
-
     public MyLinkedList() {
         first = null;
         length = 0;  // added after considering the size() method
@@ -90,7 +89,6 @@ public class MyLinkedList<T> {
         while (curr.next != null) {
             if (m.equals(curr.next.data)) {
                 // this implies that the data must have an overridden equals() method!
-
                 curr.next = curr.next.next;
                 length--;
                 return true;
@@ -104,9 +102,9 @@ public class MyLinkedList<T> {
     public String toString() {
         StringBuilder result = new StringBuilder();  //String result = "";
 
-        for (Node curr = first; curr != null; curr = curr.next)
+        for (Node curr = first; curr != null; curr = curr.next) {
             result.append(curr.data + "->");  //result = result + curr.data + "->";
-
+        }
         result.append("[null]");
         return result.toString();   //return result + "[null]";
     }
@@ -244,7 +242,6 @@ public class MyLinkedList<T> {
         }
     }
 
-    // Passed
     /**
      * Checks arrays are equal size and each element is equal
      */
@@ -318,7 +315,7 @@ public class MyLinkedList<T> {
 
     /**
      * Doubles each element of the list
-     * Ex. Original: 1, 2, 3 --> 2, 4, 6
+     * Ex. Original: 1, 2, 3 --> 1, 1, 2, 2, 3, 3
      */
     public void doubler() {
         if (length == 0) {
@@ -362,6 +359,122 @@ public class MyLinkedList<T> {
     }
 
     public static void main(String[] args) {
+        System.out.println("\ngetFirst() Test:");
+        System.out.println("------------------------------------");
 
+        MyLinkedList<String> gf1 = new MyLinkedList<String>();
+        MyLinkedList<String> gf2 = new MyLinkedList<String>();
+        MyLinkedList<String> gf3 = new MyLinkedList<String>();
+        
+        gf1.add("node1");
+
+        gf2.add("node1");
+        gf2.add("node2");
+
+        gf3.add("node1");
+        gf3.add("node2");
+        gf3.add("node3");
+
+        System.out.println("1-element list: \t" + gf1);
+        System.out.println("First element: \t\t" + gf1.getFirst());
+
+        System.out.println("2-element list: \t" + gf2);
+        System.out.println("First element: \t\t" + gf2.getFirst());
+
+        System.out.println("3-element list: \t" + gf3);
+        System.out.println("First element: \t\t" + gf3.getFirst());
+
+        /*=====================================================*/
+
+        System.out.println("\n\ngetLast() Test:");
+        System.out.println("------------------------------------");
+
+        System.out.println("1-element list: \t" + gf1);
+        System.out.println("Last element: \t\t" + gf1.getLast());
+
+        System.out.println("2-element list: \t" + gf2);
+        System.out.println("Last element: \t\t" + gf2.getLast());
+
+        System.out.println("3-element list: \t" + gf3);
+        System.out.println("Last element: \t\t" + gf3.getLast());
+
+        /*====================================================*/
+
+        System.out.println("\n\nadd() Test:");
+        System.out.println("------------------------------------");
+        System.out.println("Element to add: \tadded"); 
+
+        System.out.println("1-element list: \t" + gf1);
+        gf1.add("added");
+        System.out.println("After adding: \t\t" + gf1);
+
+        System.out.println("2-element list: \t" + gf2);
+        gf2.add("added");
+        System.out.println("After adding: \t\t" + gf2);
+
+        System.out.println("3-element list: \t" + gf3);
+        gf3.add("added");
+        System.out.println("After adding: \t\t" + gf3);
+
+        /*====================================================*/
+        MyLinkedList<String> af1 = new MyLinkedList<String>();
+        MyLinkedList<String> af2 = new MyLinkedList<String>();
+        MyLinkedList<String> af3 = new MyLinkedList<String>();
+        
+        af1.add("1");
+        af1.add("2");
+        af1.add("3");
+
+        af2.add("1");
+        af2.add("2");
+        af2.add("3");
+        af2.add("4");
+
+        af3.add("1");
+        af3.add("2");
+        af3.add("3");
+        af3.add("4");
+        af3.add("5");
+        af3.add("6");
+
+        System.out.println("\n\naddAfter() Test:");
+        System.out.println("------------------------------------");
+        System.out.println("Element to add: \tadded"); 
+        int index = 0;
+
+
+        System.out.println("Index to add after:\t" + index);
+        System.out.println("List 1: \t\t" + af1);
+        af1.addAfter(index, "added");
+        System.out.println("After adding: \t\t" + af1);
+
+        index++;
+        System.out.println("Index to add after:\t" + index);
+        System.out.println("List 2: \t\t" + af2);
+        af2.addAfter(index, "added");
+        System.out.println("After adding: \t\t" + af2);
+        
+        index++;
+        System.out.println("Index to add after:\t" + index);
+        System.out.println("List 3: \t\t" + af3);
+        af3.addAfter(index, "added");
+        System.out.println("After adding: \t\t" + af3);
+
+        /*====================================================*/
+
+        System.out.println("\n\nset() Test:");
+        System.out.println("------------------------------------");
+        
+        index = 2;
+        System.out.println("index to set: " + index);
+        System.out.println("set value: " + 2.5);
+        System.out.println("List beofre setting: \t\t" + af2);
+        af2.set(index, "2.5");
+        System.out.println("List after setting: \t\t" + af2);
+
+        /*====================================================*/
+
+        System.out.println("\n\nlastIndex() Test:");
+        System.out.println("------------------------------------");
     }
 }
