@@ -1,23 +1,23 @@
-import java.util.*;
+import java.util.LinkedList;
 
 public class LinkedTest{
     public static void main(String[] args) {
         MyLinkedList<String> list0 = new MyLinkedList<String>();
         MyLinkedList<String> list1 = new MyLinkedList<String>();
         MyLinkedList<String> list2 = new MyLinkedList<String>();
-        
+
         list1.addFirst("node1");
         System.out.println("1-element list: " + list1);
         list2.addFirst("node2"); list2.addFirst("node1");
         System.out.println("2-element list: " + list2);
-        
+
         System.out.println("\nTesting getFirst...");
         System.out.println(list0.getFirst());
         System.out.println(list1.size() + " " + list1);
         System.out.println(list1.getFirst().equals("node1")?"PASSED":"**FAILED**");
         System.out.println(list2.size() + " " + list2);
         System.out.println(list2.getFirst().equals("node1")?"PASSED":"**FAILED**");
-        
+
         System.out.println("\nTesting getLast...");
         System.out.println(list0.getLast());
         System.out.println(list1.size() + " " + list1);
@@ -26,7 +26,7 @@ public class LinkedTest{
         System.out.println(list2.size() + " " + list2);
         System.out.println(list2.getLast().equals("node2")?"PASSED":"**FAILED**");
         System.out.println(list2.size() + " " + list2);
-      
+
         System.out.println("\nTesting add...");
         MyLinkedList<String> list3 = new MyLinkedList<String>();
         MyLinkedList<String> list4 = new MyLinkedList<String>();
@@ -37,13 +37,13 @@ public class LinkedTest{
 
         System.out.println("\nTesting addAfter...");
         MyLinkedList<String> listAddAfter1 = new MyLinkedList<String>();
-        listAddAfter1.add("node1"); 
-        listAddAfter1.add("node2"); 
-        listAddAfter1.add("node3"); 
-        listAddAfter1.add("node4"); 
+        listAddAfter1.add("node1");
+        listAddAfter1.add("node2");
+        listAddAfter1.add("node3");
+        listAddAfter1.add("node4");
         listAddAfter1.addAfter(2, "after 2");
         System.out.println("Add-after-2: " + listAddAfter1);
-        
+
 
         System.out.println("\nTesting set...");
         MyLinkedList<String> test = new MyLinkedList<String>();
@@ -54,7 +54,7 @@ public class LinkedTest{
         System.out.println("  return value test = " + ((test.set(1,"Nora")).equals("Sohaib")?"PASSED":"**FAILED**"));
         System.out.println("  non-empty test = " + ((test.get(0).equals("Salman") && test.get(1).equals("Nora") &&
                            test.get(2).equals("Mark"))?"PASSED":"**FAILED**"));
-  
+
         System.out.println("\nTesting addAfter...");
         MyLinkedList<String> other = new MyLinkedList<String>();
         other.add("one");
@@ -115,7 +115,7 @@ public class LinkedTest{
         System.out.println("\nTesting split...");
         MyLinkedList<String> toSplit = new MyLinkedList<String>();
         MyLinkedList<String> back = new MyLinkedList<String>();
-        
+
         toSplit.add("node1");
         toSplit.add("node2");
         toSplit.add("node3");
@@ -140,17 +140,17 @@ public class LinkedTest{
         toDouble.doubler();
         System.out.println("After doubling " + toDouble);
 
+        System.out.println("\nTesting sublist\n");
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
 
-        System.out.println("\nTesting sublist:\n");
-        MyLinkedList<String> sub = new MyLinkedList<String>();
-        sub.add("node1");
-        sub.add("node2");
-        sub.add("node3");
-        sub.add("node4");
-        MyLinkedList<String> subList = new MyLinkedList<String>(); 
-        subList = toDouble.sublist(2, 4);
-        System.out.println("After sublist " + subList.toString());
-        */
+        System.out.println(list.subList(2, 5));
+
         /*
         list0.clear();
         list1.clear();

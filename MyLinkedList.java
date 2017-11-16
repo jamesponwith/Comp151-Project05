@@ -345,23 +345,23 @@ public class MyLinkedList<T> {
             System.out.println("Index of out of range");
             return null;
         }
-        MyLinkedList<T> sub = new MyLinkedList<>(); 
+
+        MyLinkedList<T> sub = new MyLinkedList<>();
         Node start = this.first;
         int pos = 0;
-        while(pos < i) { 
+        while(pos < i) {
             start = start.next;
             pos++;
         }
         sub.add(start);
         while(start.next != null) {
-            sub.add(start);
             start = start.next;
+            sub.add(start);
         }
         return sub;
     }
 
     public static void main(String[] args) {
-        // here is where you can create some lists (use lists of Strings
-        // to test) and thoroughly test each of your new methods
+
     }
 }
