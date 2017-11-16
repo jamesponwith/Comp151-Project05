@@ -435,6 +435,10 @@ public class MyLinkedList<T> {
         gf3.add("added");
         System.out.println("After adding: \t\t" + gf3);
 
+        System.out.println("Results:");
+        System.out.println("1-element test:\t" + ((gf1.getLast() == "added") ? "PASSED" : "FAILED"));
+        System.out.println("2-element test:\t" + ((gf2.getLast() == "added") ? "PASSED" : "FAILED"));
+        System.out.println("3-element test:\t" + ((gf3.getLast() == "added") ? "PASSED" : "FAILED"));
         /*====================================================*/
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
@@ -646,7 +650,5 @@ public class MyLinkedList<T> {
 
         System.out.println("Original list: \t" + subList);
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
-
-
     }
 }
