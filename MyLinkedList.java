@@ -700,6 +700,9 @@ public class MyLinkedList<T> {
             if(subList.sublist(30, 40) == null) {
                 sublistFail = false;
             }
+            else{
+                sublistFail = true;
+            }
 
         }catch(Exception e){
             System.out.println("Null list test: \t" + "FAILED");
