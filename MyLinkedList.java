@@ -504,12 +504,28 @@ public class MyLinkedList<T> {
         System.out.println("List: \t\t" + list);
         MyLinkedList<Integer> listClone = new MyLinkedList<>();
         listClone = list.clone();
-        System.out.println("Cloned List: \t\t" + listClone);
-
+        System.out.println("Cloned List: \t" + listClone);
 
         /*====================================================*/
 
         System.out.println("\n\nremoveAll() Test:");
         System.out.println("------------------------------------");
+        MyLinkedList<Integer> rmList = new MyLinkedList<>();
+        rmList.add(1);
+        rmList.add(2);
+        rmList.add(2);
+        rmList.add(2);
+        rmList.add(3);
+        rmList.add(4);
+
+        Integer toRm = 2;
+        System.out.println("Before removeAll(): \t\t" + rmList);
+        System.out.println("Removing " + toRm);
+        rmList.removeAll(toRm);
+        System.out.println("After removeAll(): \t\t" + rmList);
+
+        /*====================================================*/
+
+
     }
 }
