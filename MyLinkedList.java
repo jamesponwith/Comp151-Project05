@@ -112,7 +112,9 @@ public class MyLinkedList<T> {
 
     // ------------------------  HW4 methods start here ------------------------
 
-    // Passed 
+    /**
+     * Returns the first element's data of the list
+     */
     public Object getFirst() {
         if (first == null) {
             System.out.println("Error - Linked List is empty");
@@ -121,26 +123,33 @@ public class MyLinkedList<T> {
         return first.data;
     }
 
-    // Passed 
+    /**
+     * Returns the last element's data
+     */
     public Object getLast() {
         Node start = this.first;
         if (start == null) {
             System.out.println("Error - Linked List is empty");
             return null;
         }
+        // loop through to the last element
         while(start.next != null) {
             start = start.next;
         }
         return start.data;
     }
 
-    // Passed
+    /**
+     * Adds an node with the paramater's value
+     * to the end of the list
+     */
     public void add(Object value) {
         Node start = this.first;
         if (start == null) {
             addFirst(value);
             return;
         }
+        // Loop through to end of the list
         while(start.next != null) {
             start = start.next;
         }
@@ -149,22 +158,28 @@ public class MyLinkedList<T> {
         length++;
     }
 
-    // Passed
+    /**
+     * Add an element, (2nd param) after the specified index (1st param)
+     */
     public void addAfter(int index, Object value) {
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
         }
 
         Node start = this.first;
+        // loop up to index
         for(int counter = 0; counter < index; counter++) {
             start = start.next;
         }
-
         Node nextNode = start.next;
+        // insert node at current location, having it point to the node after
         start.next = new Node(value, nextNode);
         length++;
     }
-    // Passed    
+
+    /**
+     * Set the value(2nd param) of the node at specified index (1st param)
+     */
     public Object set(int index, Object newValue) {
         if (index < 0 || index >= length) {
             System.out.println("Index of " + index + " out of range");
@@ -172,15 +187,20 @@ public class MyLinkedList<T> {
         }
 
         Node start = this.first;
+        // loop until specified index
         for(int counter = 0; counter < index; counter++) {
             start = start.next;
         }
+        // copy old data
         Object oldData = start.data;
+        // set data to newValue
         start.data = newValue;
-
         return oldData;
     }
-    // Passed 
+
+    /**
+     * Returns the index of the last element
+     */
     public int lastIndex(Object value) {
         Node start = this.first;
         int lastOccur = -1;
@@ -198,13 +218,19 @@ public class MyLinkedList<T> {
 
         return lastOccur;
     }
+
     // Check  
+    /**
+     * Creates a shallow copy of this list
+     */
     public MyLinkedList<T> clone() {
         MyLinkedList<T> clone = this;
         return clone;
     }
 
-    // Passed
+    /**
+     * Removes all instances of the value passed
+     */
     public void removeAll(Object value) {
         Node start = this.first;
         while (start.next != null) {
