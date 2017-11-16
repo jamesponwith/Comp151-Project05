@@ -492,6 +492,9 @@ public class MyLinkedList<T> {
 
         /*====================================================*/
 
+        System.out.println("\n\nremoveAll() Test:");
+        System.out.println("------------------------------------");
+
 
     }
 }
