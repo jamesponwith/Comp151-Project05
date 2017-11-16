@@ -439,6 +439,7 @@ public class MyLinkedList<T> {
         System.out.println("1-element test:\t" + ((gf1.getLast() == "added") ? "PASSED" : "FAILED"));
         System.out.println("2-element test:\t" + ((gf2.getLast() == "added") ? "PASSED" : "FAILED"));
         System.out.println("3-element test:\t" + ((gf3.getLast() == "added") ? "PASSED" : "FAILED"));
+
         /*====================================================*/
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
@@ -481,6 +482,12 @@ public class MyLinkedList<T> {
         System.out.println("List 3: \t\t" + af3);
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
+
+        int indexT = 1;
+        System.out.println("Results");
+        System.out.println("List 1 Test\t\t" + ((af1.get(indexT) == "added")? "PASSED" : "FAILED"));
+        System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
+        System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
