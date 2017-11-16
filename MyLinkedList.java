@@ -401,9 +401,8 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
 
-        System.out.print("\nTest for null list: \t");
         MyLinkedList<String> emptyList = new MyLinkedList<String>();
-        System.out.print(emptyList.getFirst());
+        System.out.println("Test for null list:\t\t" + (emptyList.getFirst() == "node3" ? "PASSED" : "FAILED"));
 
         /*=====================================================*/
 
@@ -423,8 +422,7 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf3.getLast() == "node3" ? "PASSED" : "FAILED"));
 
-        System.out.print("\nTest for null list: \t");
-        System.out.print(emptyList.getLast());
+        System.out.println("Test for null list:\t\t" + (emptyList.getLast() == "node3" ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
@@ -492,11 +490,21 @@ public class MyLinkedList<T> {
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
 
+        int indexError = 2;
+        try {
+            emptyList.addAfter(-7, 200);
+            emptyList.addAfter(200, 200);
+
+        }catch(Exception e) {
+            System.out.println();
+        }
+
         int indexT = 1;
         System.out.println("Results");
         System.out.println("List 1 Test\t\t" + ((af1.get(indexT) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
+        
         try {
             System.out.println("Invalid index test\t\t" + (!(af3.get(indexT-7) == "added")? "PASSED" : "FAILED"));
             System.out.println("Invalid index test\t\t" + (!(af3.get(indexT+200) == "added")? "PASSED" : "FAILED"));
@@ -522,8 +530,13 @@ public class MyLinkedList<T> {
         Integer setInt = 45;
         System.out.println("Result");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
+
         System.out.println("Index -1 test:\t\t" + (!(af2.get(-1) == setInt) ? "PASSED" : "FAILED"));
         System.out.println("Index 50 test:\t\t" + (!(af2.get(-1) == setInt) ? "PASSED" : "FAILED"));
+
+        MyLinkedList<String> testList = new MyLinkedList<String>();
+        System.out.println("Test for out of bounds index (index -1): \t" + testList.set(-3, 45));
+        System.out.println("Test for out of bounds index (index 50): \t" + testList.set(50, 45));
 
         /*====================================================*/
 
@@ -663,6 +676,13 @@ public class MyLinkedList<T> {
         doubler1.doubler();
         System.out.println("After doubling:\t\t" + doubler1);
 
+        try {
+            emptyList.doubler();
+        }catch (Exception e) {
+            System.out.println("Null list test: \t" + " FAILED");
+        }
+
+
         /*====================================================*/
 
         System.out.println("\n\nsublist() Test:");
@@ -680,5 +700,6 @@ public class MyLinkedList<T> {
 
         System.out.println("Original list: \t" + subList);
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
+
     }
 }
