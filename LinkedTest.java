@@ -150,7 +150,7 @@ public class LinkedTest{
         MyLinkedList<String> subList = new MyLinkedList<String>(); 
         subList = toDouble.sublist(2, 4);
         System.out.println("After sublist " + subList.toString());
-        */
+
         System.out.println("\nTesting sublist\n");
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);

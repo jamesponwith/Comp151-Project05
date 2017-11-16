@@ -479,32 +479,11 @@ public class MyLinkedList<T> {
 
         /*====================================================*/
 
-        System.out.println("\n\nlastIndex() Test:");
+        System.out.println("\n\nclone() Test:");
         System.out.println("------------------------------------");
 
         /*====================================================*/
 
-        System.out.println("\n\nlastIndex() Test:");
-        System.out.println("------------------------------------");
 
-        /*====================================================*/
-
-        System.out.println("\n\nlastIndex() Test:");
-        System.out.println("------------------------------------");
-
-        /*====================================================*/
-
-        System.out.println("\n\nlastIndex() Test:");
-        System.out.println("------------------------------------");
-
-        /*====================================================*/
-
-        System.out.println("\n\nlastIndex() Test:");
-        System.out.println("------------------------------------");
-
-        /*====================================================*/
-
-        System.out.println("\n\nlastIndex() Test:");
-        System.out.println("------------------------------------");
     }
 }
