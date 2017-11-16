@@ -374,6 +374,9 @@ public class MyLinkedList<T> {
         MyLinkedList<String> gf1 = new MyLinkedList<String>();
         MyLinkedList<String> gf2 = new MyLinkedList<String>();
         MyLinkedList<String> gf3 = new MyLinkedList<String>();
+        boolean test1 = false;
+        boolean test2 = false;
+        boolean test3 = false;
         
         gf1.add("node1");
 
@@ -392,6 +395,19 @@ public class MyLinkedList<T> {
 
         System.out.println("3-element list: \t" + gf3);
         System.out.println("First element: \t\t" + gf3.getFirst());
+        
+        if (gf1.getFirst().equals("node1")) {
+            test1 = true;
+        }
+        if (gf2.getFirst().equals("node1")) {
+            test2 = true;
+        }
+        if (gf2.getFirst().equals("node1")) {
+            test2 = true;
+        }
+        System.out.println("Test 1:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
+        System.out.println("Test 2:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
+        System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
 
         /*=====================================================*/
 
@@ -450,7 +466,6 @@ public class MyLinkedList<T> {
         System.out.println("------------------------------------");
         System.out.println("Element to add: \tadded"); 
         int index = 0;
-
 
         System.out.println("Index to add after:\t" + index);
         System.out.println("List 1: \t\t" + af1);
