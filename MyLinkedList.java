@@ -69,7 +69,7 @@ public class MyLinkedList<T> {
 
     public Object get(int index) {
         if (index < 0 || index >= length) {
-            //System.out.println("Index of " + index + " out of range");
+            System.out.println("Index of " + index + " out of range");
             return null;
         }
         Node curr = first;
@@ -503,7 +503,6 @@ public class MyLinkedList<T> {
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
 
-        System.out.println("\nTesting invalid Indexes: ");
         int indexError = 2;
         try {
             emptyList.addAfter(-7, 200);
@@ -519,8 +518,8 @@ public class MyLinkedList<T> {
         System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
 
-        System.out.println("Test invalid index (Index -7):\t\t" + (!(emptyList.get(indexError-9) == "added")? "PASSED" : "FAILED"));
-        System.out.println("Test invalid index (Index 200):\t\t" + (!(emptyList.get(indexError+198) == "added")? "PASSED" : "FAILED"));
+        System.out.println("Invalid index test (Index -7):\t\t" + (!(emptyList.get(indexError-9) == "added")? "PASSED" : "FAILED"));
+        System.out.println("Invalid index test (Index 200):\t\t" + (!(emptyList.get(indexError+198) == "added")? "PASSED" : "FAILED"));
 
 
 
@@ -538,17 +537,12 @@ public class MyLinkedList<T> {
         System.out.println("List after setting: \t\t" + af2);
         System.out.println(" ");
 
-        MyLinkedList<String> testList = new MyLinkedList<String>();
-        System.out.println("Testing out of bounds indexes: ");
-        testList.set(-50, 45);
-        testList.set(50, 45);
-
         System.out.println("Result");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
 
-        System.out.println("Test index 50: \t\t" + ((testList.get(50) == null) ? "PASSED" : "FAILED"));
-        System.out.println("Test index -50: \t" + ((testList.get(50) == null) ? "PASSED" : "FAILED"));
-
+        MyLinkedList<String> testList = new MyLinkedList<String>();
+        System.out.println("Test for out of bounds index (index -1): \t" + testList.set(-3, 45));
+        System.out.println("Test for out of bounds index (index 50): \t" + testList.set(50, 45));
 
         /*====================================================*/
 
