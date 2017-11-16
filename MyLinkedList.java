@@ -360,10 +360,10 @@ public class MyLinkedList<T> {
             start = start.next;
             pos++;
         }
-        sub.add(start);
+        sub.add(start.data);
         while(start.next != null) {
             start = start.next;
-            sub.add(start);
+            sub.add(start.data);
         }
         return sub;
     }
