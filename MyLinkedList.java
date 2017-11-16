@@ -501,6 +501,9 @@ public class MyLinkedList<T> {
         af2.set(index, "2.5");
         System.out.println("List after setting: \t\t" + af2);
 
+        System.out.println("Result");
+        System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
+
         /*====================================================*/
 
         System.out.println("\n\nlastIndex() Test:");
