@@ -694,5 +694,17 @@ public class MyLinkedList<T> {
         System.out.println("Original list: \t" + subList);
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
 
+        boolean sublistFail = false;
+
+        try{
+            if(subList.sublist(30, 40) == null) {
+                sublistFail = false;
+            }
+
+        }catch(Exception e){
+            System.out.println("Null list test: \t" + "FAILED");
+        }
+
+        System.out.println("Null list test: \t" + (sublistFail ? "PASSED" : "FAILED"));
     }
 }
