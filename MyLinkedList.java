@@ -497,12 +497,10 @@ public class MyLinkedList<T> {
         System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
         try {
-            System.out.println("\nTest for out of bounds index (index -1): \t");
-            af2.addAfter(-1, 45);
-            System.out.println("\nTest for out of bounds index (index 50): \t");
-            af2.addAfter(50, 45);
+            System.out.println("List 3 Test\t\t" + ((af3.get(indexT-7) == "added")? "PASSED" : "FAILED"));
+            System.out.println("List 3 Test\t\t" + ((af3.get(indexT+200) == "added")? "PASSED" : "FAILED"));
         }catch(Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println();
         }
 
         /*====================================================*/
