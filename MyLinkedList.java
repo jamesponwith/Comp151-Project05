@@ -245,6 +245,9 @@ public class MyLinkedList<T> {
     }
 
     // Passed
+    /**
+     * Checks arrays are equal size and each element is equal
+     */
     @Override
     public boolean equals(Object o) {
         MyLinkedList<T> list = null;
@@ -276,11 +279,19 @@ public class MyLinkedList<T> {
         }
     }
 
+    /**
+     *
+     */
     @Override
     public int hashCode() {
         return 0;
     }
 
+    /**
+     * Splits the original list leaving the original with the
+     * first half of the list and returns a reference to
+     * a new list which contains the second half of the list
+     */
     public MyLinkedList<T> split() {
         if (this.size() == 0) {
             System.out.println("Cannot split");
@@ -308,7 +319,8 @@ public class MyLinkedList<T> {
     }
 
     /**
-     * Creates a copy of every element in the array
+     * Doubles each element of the list
+     * Ex. Original: 1, 2, 3 --> 2, 4, 6
      */
     public void doubler() {
         if (length == 0) {
@@ -327,6 +339,9 @@ public class MyLinkedList<T> {
         add(start.data);
     }
 
+    /**
+     * Returns a reference to a sublist of the original list
+     */
     public MyLinkedList<T> sublist(int i, int j) {
         if ((i < 0 || i >= length) || (j < 0 || j >= length)) {
             System.out.println("Index of out of range");
