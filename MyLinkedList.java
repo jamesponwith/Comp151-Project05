@@ -510,7 +510,9 @@ public class MyLinkedList<T> {
 
         System.out.println("\n\nremoveAll() Test:");
         System.out.println("------------------------------------");
+        
         MyLinkedList<Integer> rmList = new MyLinkedList<>();
+
         rmList.add(1);
         rmList.add(2);
         rmList.add(2);
@@ -526,6 +528,33 @@ public class MyLinkedList<T> {
 
         /*====================================================*/
 
+        System.out.println("\n\nequals() Test:");
+        System.out.println("------------------------------------");
 
+        MyLinkedList<String> equals1 = new MyLinkedList<String>();
+        MyLinkedList<String> equals2 = new MyLinkedList<String>();
+        MyLinkedList<String> equals3 = new MyLinkedList<String>();
+
+        equals1.add("Alpha");
+        equals1.add("Bravo");
+        equals1.add("Charlie");
+        equals1.add("Delta");
+
+        equals2.add("Alpha");
+        equals2.add("Bravo");
+        equals2.add("Charlie");
+        equals2.add("Delta");
+
+        equals3.add("Alpha");
+        equals3.add("Bravo");
+        equals3.add("Charlie");
+        equals3.add("Echo");
+
+        System.out.println("List 1\t\t" + equals1);
+        System.out.println("List 2\t\t" + equals2);
+        System.out.println("List 3\t\t" + equals3);
+
+        System.out.println("\nlist1.equals(list2) = " + equals1.equals(equals2));
+        System.out.println("\nlist1.equals(list3) = " + equals1.equals(equals3));
     }
 }
