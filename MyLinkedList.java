@@ -100,6 +100,7 @@ public class MyLinkedList<T> {
         return false;
     }
 
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();  //String result = "";
 
@@ -243,13 +244,21 @@ public class MyLinkedList<T> {
         }
     }
 
+    // Passed
     @Override
     public boolean equals(Object o) {
-        MyLinkedList<T> list = (MyLinkedList<T>)o;
+        MyLinkedList<T> list = null;
+        try {
+            @SuppressWarnings("unchecked")
+            MyLinkedList<T> tempList = (MyLinkedList<T>)o;
+            list = tempList;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         Node start1 = this.first;
         Node start2 = list.first;
         int counter = 0;
-        if(((MyLinkedList<T>) o).length == list.length) {
+        if(this.length == list.length) {
             while(counter < list.length) {
                 if(start1.data == start2.data) {
                     start1 = start1.next;
@@ -283,8 +292,8 @@ public class MyLinkedList<T> {
         }
         MyLinkedList<T> back = new MyLinkedList<>();
 
-        Node newNode = new Node(start.data, start.next);
         while (start.next != null) {
+            Node newNode = new Node(start.data, start.next);
             if (back.size() == 0) {
                 back.addFirst(newNode);
             }
