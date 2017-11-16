@@ -297,19 +297,24 @@ public class MyLinkedList<T> {
         this.set(length / 2, null);
         return back;
     }
-    // Pass 
+
+    /**
+     * Creates a copy of every element in the array
+     */
     public void doubler() {
         if (length == 0) {
             System.out.println("List is empty");
         }
         Node start = this.first;
         int pos = 0;
+        //Loop to last element
         while (start.next != null) {
             this.addAfter(pos, start.data);
             start = start.next.next;
             pos += 2;
             length++;
         }
+        // Add the last element 
         add(start.data);
     }
 
