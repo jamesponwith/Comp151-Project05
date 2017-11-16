@@ -110,7 +110,6 @@ public class MyLinkedList<T> {
         result.append("[null]");
         return result.toString();   //return result + "[null]";
     }
-
     // ------------------------  HW4 methods start here ------------------------
 
     /**
@@ -314,6 +313,7 @@ public class MyLinkedList<T> {
             back.add(newNode);
             start = start.next;
         }
+
         Node end = this.first;
         for (int i = 0; i < middle; i++) {
             end = end.next;
@@ -596,5 +596,21 @@ public class MyLinkedList<T> {
 
         System.out.println("List3 after splitting: \t\t" + split3);
         System.out.println("List4 after splitting: \t\t" + split4);
+
+        /*====================================================*/
+
+        System.out.println("\n\ndoubler() Test:");
+        System.out.println("------------------------------------");
+
+        MyLinkedList<Integer> doubler1 = new MyLinkedList<>();
+        MyLinkedList<Integer> doubler2 = new MyLinkedList<>();
+
+        for (int i = 0; i < 4; i++) {
+            doubler1.add(i);
+        }
+
+        System.out.println("Before doubling:\t" + doubler1);
+        doubler1.doubler();
+        System.out.println("After doubling:\t\t" + doubler1);
     }
 }
