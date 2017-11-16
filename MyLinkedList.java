@@ -705,6 +705,6 @@ public class MyLinkedList<T> {
             System.out.println("Null list test: \t" + "FAILED");
         }
 
-        System.out.println("Null list test: \t" + (sublistFail ? "PASSED" : "FAILED"));
+        System.out.println("Index out of bounds test: \t" + (sublistFail ? "PASSED" : "FAILED"));
     }
 }
