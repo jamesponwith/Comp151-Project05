@@ -478,6 +478,15 @@ public class MyLinkedList<T> {
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
 
+        try {
+            System.out.println("\nTest for out of bounds index (index -1): \t");
+            af2.addAfter(-1, 45);
+            System.out.println("\nTest for out of bounds index (index 50): \t");
+            af2.addAfter(50, 45);
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         /*====================================================*/
 
         System.out.println("\n\nset() Test:");
