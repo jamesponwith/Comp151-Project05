@@ -226,6 +226,14 @@ public class MyLinkedList<T> {
      */
     public MyLinkedList<T> clone() {
         MyLinkedList<T> clone = this;
+        Node start = this.first;
+        Node nodeCopy = new Node(start.data, null);
+
+        while (start.next != null) {
+            start = start.next;
+            nodeCopy.next = new Node(start.data, null);
+        }
+
         return clone;
     }
 
