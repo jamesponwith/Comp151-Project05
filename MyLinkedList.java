@@ -491,17 +491,26 @@ public class MyLinkedList<T> {
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
 
+        int indexError = 2;
+        try {
+            emptyList.addAfter(-7, 200);
+            emptyList.addAfter(200, 200);
+
+        }catch(Exception e) {
+            System.out.println();
+        }
+
         int indexT = 1;
         System.out.println("Results");
         System.out.println("List 1 Test\t\t" + ((af1.get(indexT) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
-        try {
-            System.out.println("List 3 Test\t\t" + ((af3.get(indexT-7) == "added")? "PASSED" : "FAILED"));
-            System.out.println("List 3 Test\t\t" + ((af3.get(indexT+200) == "added")? "PASSED" : "FAILED"));
-        }catch(Exception e) {
-            System.out.println();
-        }
+
+        System.out.println("Invalid index test (Index -6):\t\t" + ((emptyList.get(indexError-7) == "added")? "PASSED" : "FAILED"));
+        System.out.println("Invalid index test (Index 201):\t\t" + ((emptyList.get(indexError+200) == "added")? "PASSED" : "FAILED"));
+
+
+
 
         /*====================================================*/
 
@@ -679,7 +688,5 @@ public class MyLinkedList<T> {
         System.out.println("Original list: \t" + subList);
         System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
 
-        System.out.println(" ");
-        System.out.println("\nTest for invalid indexes: " + (subList.sublist(30, 40))) ? "PASSED" : "FAILED");
     }
 }
