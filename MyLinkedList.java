@@ -279,13 +279,13 @@ public class MyLinkedList<T> {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public int hashCode() {
-        return 0;
-    }
+        int hash = 7;
+        hash = 31 * hash + length;
+        return hash;
+        //return Objects.hash(length);
+    } 
 
     /**
      * Splits the original list leaving the original with the
@@ -305,16 +305,14 @@ public class MyLinkedList<T> {
 
         while (start.next != null) {
             Node newNode = new Node(start.data, start.next);
-            if (back.size() == 0) {
-                back.addFirst(newNode);
-            }
-            else {
-                back.add(newNode);
-            }
+            back.add(newNode);
             start = start.next;
-            newNode = new Node(start.data, start.next);
         }
-        this.set(length / 2, null);
+        Node end = this.first;
+        for (int i = 0; i < (this.size() / 2); i++) {
+            end = end.next;
+        }
+        end.next = null;
         return back;
     }
 
