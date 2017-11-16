@@ -402,8 +402,7 @@ public class MyLinkedList<T> {
         System.out.println("Test 3:\t\t" + (gf1.getFirst() == "node1" ? "PASSED" : "FAILED"));
 
         MyLinkedList<String> emptyList = new MyLinkedList<String>();
-        System.out.println();
-        System.out.println("Test for null list:\t\t" + (emptyList.getLast() == "node3" ? "PASSED" : "FAILED"));
+        System.out.println("Test for null list:\t\t" + (emptyList.getFirst() == "node3" ? "PASSED" : "FAILED"));
 
         /*=====================================================*/
 
@@ -423,7 +422,6 @@ public class MyLinkedList<T> {
         System.out.println("Test 2:\t\t" + (gf2.getLast() == "node2" ? "PASSED" : "FAILED"));
         System.out.println("Test 3:\t\t" + (gf3.getLast() == "node3" ? "PASSED" : "FAILED"));
 
-        System.out.println();
         System.out.println("Test for null list:\t\t" + (emptyList.getLast() == "node3" ? "PASSED" : "FAILED"));
 
         /*====================================================*/
@@ -670,6 +668,13 @@ public class MyLinkedList<T> {
         System.out.println("Before doubling:\t" + doubler1);
         doubler1.doubler();
         System.out.println("After doubling:\t\t" + doubler1);
+
+        try {
+            emptyList.doubler();
+        }catch (Exception e) {
+            System.out.println("Null list test: \t" + " FAILED");
+        }
+
 
         /*====================================================*/
 
