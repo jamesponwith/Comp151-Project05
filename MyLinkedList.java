@@ -498,8 +498,8 @@ public class MyLinkedList<T> {
         System.out.println("List 2 Test\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
         try {
-            System.out.println("List 3 Test\t\t" + ((af3.get(indexT-7) == "added")? "PASSED" : "FAILED"));
-            System.out.println("List 3 Test\t\t" + ((af3.get(indexT+200) == "added")? "PASSED" : "FAILED"));
+            System.out.println("Invalid index test\t\t" + (!(af3.get(indexT-7) == "added")? "PASSED" : "FAILED"));
+            System.out.println("Invalid index test\t\t" + (!(af3.get(indexT+200) == "added")? "PASSED" : "FAILED"));
         }catch(Exception e) {
             System.out.println();
         }
@@ -516,11 +516,14 @@ public class MyLinkedList<T> {
         af2.set(index, "2.5");
         System.out.println("List after setting: \t\t" + af2);
         System.out.println(" ");
-
-        System.out.println("Result");
-        System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
         System.out.println("Test for out of bounds index (index -1): \t" + af2.set(-1, 45));
         System.out.println("Test for out of bounds index (index 50): \t" + af2.set(50, 45));
+
+        Integer setInt = 45;
+        System.out.println("Result");
+        System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
+        System.out.println("Index -1 test:\t\t" + (!(af2.get(-1) == setInt) ? "PASSED" : "FAILED"));
+        System.out.println("Index 50 test:\t\t" + (!(af2.get(-1) == setInt) ? "PASSED" : "FAILED"));
 
         /*====================================================*/
 
