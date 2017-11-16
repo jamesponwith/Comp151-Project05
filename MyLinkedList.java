@@ -7,6 +7,8 @@
  * Main method of this program tests the methods written.
  */
 
+import java.util.LinkedList;
+
 public class MyLinkedList<T> {
     // the Node class is a private inner class used (only) by the LinkedList class
     private class Node {
@@ -489,6 +491,18 @@ public class MyLinkedList<T> {
 
         System.out.println("\n\nclone() Test:");
         System.out.println("------------------------------------");
+
+        LinkedList<Integer> list = new LinkedList<>();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+
+        LinkedList<Integer> listClone = new LinkedList<>();
+        listClone = list.clone();
 
         /*====================================================*/
 
