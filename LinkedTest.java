@@ -120,14 +120,16 @@ public class LinkedTest{
         toSplit.add("node2");
         toSplit.add("node3");
         toSplit.add("node4");
+        toSplit.add("node5");
 
 
         System.out.println("Before splitting:\n" + toSplit);
         back = toSplit.split();
         System.out.println("Front\n" + toSplit);
-        System.out.println("Back:\n" + back);
+        String backString = back.toString();
+        System.out.println("Back:\n" + backString);
 
-
+        /*
         System.out.println("\nTesting doubler:\n");
         MyLinkedList<String> toDouble = new MyLinkedList<String>();
         toDouble.add("node1");
@@ -138,6 +140,17 @@ public class LinkedTest{
         toDouble.doubler();
         System.out.println("After doubling " + toDouble);
 
+
+        System.out.println("\nTesting sublist:\n");
+        MyLinkedList<String> sub = new MyLinkedList<String>();
+        sub.add("node1");
+        sub.add("node2");
+        sub.add("node3");
+        sub.add("node4");
+        MyLinkedList<String> subList = new MyLinkedList<String>(); 
+        subList = toDouble.sublist(2, 4);
+        System.out.println("After sublist " + subList.toString());
+        */
         /*
         list0.clear();
         list1.clear();
