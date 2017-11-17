@@ -2,6 +2,11 @@ import java.util.LinkedList;
 
 public class LinkedTest{
     public static void main(String[] args) {
+        /**
+        * This tests uses four lists differeing
+        * in size and returns the first element.
+        */
+
         System.out.println("\ngetFirst() Test:");
         System.out.println("------------------------------------");
 
@@ -23,12 +28,15 @@ public class LinkedTest{
 
         System.out.println("1-element list: \t" + gf1);
         System.out.println("First element: \t\t" + gf1.getFirst());
+        System.out.println(" ");
 
         System.out.println("2-element list: \t" + gf2);
         System.out.println("First element: \t\t" + gf2.getFirst());
+        System.out.println(" ");
 
         System.out.println("3-element list: \t" + gf3);
         System.out.println("First element: \t\t" + gf3.getFirst());
+        System.out.println(" ");
 
         MyLinkedList<String> emptyList = new MyLinkedList<String>();
 
@@ -50,17 +58,25 @@ public class LinkedTest{
 
         /*=====================================================*/
 
+        /**
+         * This tests uses four lists differeing
+         * in size and returns the last element.
+         */
+
         System.out.println("\ngetLast() Test:");
         System.out.println("------------------------------------");
 
         System.out.println("1-element list: \t" + gf1);
         System.out.println("Last element: \t\t" + gf1.getLast());
+        System.out.println(" ");
 
         System.out.println("2-element list: \t" + gf2);
         System.out.println("Last element: \t\t" + gf2.getLast());
+        System.out.println(" ");
 
         System.out.println("3-element list: \t" + gf3);
         System.out.println("Last element: \t\t" + gf3.getLast());
+        System.out.println(" ");
 
         System.out.println("\nTesting empty list: ");
 
@@ -81,21 +97,36 @@ public class LinkedTest{
 
         /*====================================================*/
 
+        /**
+         * This tests uses
+         *
+         */
+
         System.out.println("\n\nadd() Test:");
         System.out.println("------------------------------------");
         System.out.println("Element to add: \tadded");
+        System.out.println(" ");
+        MyLinkedList<String> addEmptyList = new MyLinkedList<String>();
+
+        System.out.println("0-element list: \t" + addEmptyList);
+        addEmptyList.add("added");
+        System.out.println("After adding: \t\t" + addEmptyList);
+        System.out.println(" ");
 
         System.out.println("1-element list: \t" + gf1);
         gf1.add("added");
         System.out.println("After adding: \t\t" + gf1);
+        System.out.println(" ");
 
         System.out.println("2-element list: \t" + gf2);
         gf2.add("added");
         System.out.println("After adding: \t\t" + gf2);
+        System.out.println(" ");
 
         System.out.println("3-element list: \t" + gf3);
         gf3.add("added");
         System.out.println("After adding: \t\t" + gf3);
+        System.out.println(" ");
 
         System.out.println("\nResults:");
         System.out.println("1-element test:\t\t" + ((gf1.getLast() == "added") ? "PASSED" : "FAILED"));
@@ -104,9 +135,13 @@ public class LinkedTest{
 
         System.out.println("====================================");
         /*====================================================*/
+        MyLinkedList<String> af = new MyLinkedList<String>();
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
         MyLinkedList<String> af3 = new MyLinkedList<String>();
+
+        af.add("1");
+        af.add("2");
 
         af1.add("1");
         af1.add("2");
@@ -127,24 +162,38 @@ public class LinkedTest{
         System.out.println("\n\naddAfter() Test:");
         System.out.println("------------------------------------");
         System.out.println("Element to add: \tadded");
+
+
+        System.out.println(" ");
+        System.out.println("Base List: ");
         int index = 0;
+        af.addAfter(index, "added");
+        System.out.println("After adding: \t\t" + af);
+
 
         System.out.println("Index to add after:\t" + index);
+        System.out.println(" ");
         System.out.println("List 1: \t\t" + af1);
         af1.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af1);
 
         index++;
         System.out.println("Index to add after:\t" + index);
+        System.out.println(" ");
         System.out.println("List 2: \t\t" + af2);
         af2.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af2);
 
         index++;
         System.out.println("Index to add after:\t" + index);
+        System.out.println(" ");
         System.out.println("List 3: \t\t" + af3);
         af3.addAfter(index, "added");
         System.out.println("After adding: \t\t" + af3);
+        index++;
+        System.out.println("Index to add after:\t" + index);
+        System.out.println(" ");
+        System.out.println("Testing invalid Indexes: ");
 
         int indexError = 2;
         try {
@@ -156,7 +205,7 @@ public class LinkedTest{
         }
 
         int indexT = 1;
-        System.out.println("\nResults");
+        System.out.println("\nResults:");
         System.out.println("List 1 Test\t\t\t" + ((af1.get(indexT) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 2 Test\t\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
@@ -173,6 +222,7 @@ public class LinkedTest{
         index = 2;
         System.out.println("index to set: " + index);
         System.out.println("set value: " + 2.5);
+        System.out.println(" ");
         System.out.println("List before setting: \t\t" + af2);
         af2.set(index, "2.5");
         System.out.println("List after setting: \t\t" + af2);
@@ -183,7 +233,7 @@ public class LinkedTest{
         testList.set(-50, 45);
         testList.set(50, 45);
 
-        System.out.println("\nResult");
+        System.out.println("\nResult:");
         System.out.println("Test 1: \t\t" + ((af2.get(2) == "2.5") ? "PASSED" : "FAILED"));
 
         System.out.println("Test index 50: \t\t" + ((testList.get(50) == null) ? "PASSED" : "FAILED"));
@@ -195,15 +245,17 @@ public class LinkedTest{
         System.out.println("\n\nlastIndex() Test:");
         System.out.println("------------------------------------");
         System.out.println("Testing for value of 2");
+        System.out.println(" ");
         System.out.println("List: \t\t" + af2);
         int last1 = af2.lastIndex("2");
         System.out.println("Last index: " + last1);
         af2.add("2");
+        System.out.println(" ");
         System.out.println("List: \t\t" + af2);
         int last2 = af2.lastIndex("2");
         System.out.println("Last index: " + last2);
 
-        System.out.println("\nResults");
+        System.out.println("\nResults:");
         System.out.println("Test 1 " + ((last1 == 1) ? "PASSED" : "FAILED"));
         System.out.println("Test 2 " + ((last2 == 5) ? "PASSED" : "FAILED"));
 
@@ -275,14 +327,15 @@ public class LinkedTest{
         equals3.add("Alpha");
         equals3.add("Bravo");
         equals3.add("Charlie");
-        equals3.add("Echo");
+        equals3.add("ECHO");
 
         System.out.println("List 1\t\t" + equals1);
         System.out.println("List 2\t\t" + equals2);
         System.out.println("List 3\t\t" + equals3);
 
-        System.out.println("\nlist1.equals(list2) = " + ((equals1.equals(equals2)) ? "PASSED" : "FAILED"));
-        System.out.println("\nlist1.equals(list3) != " + (!(equals1.equals(equals3)) ? "PASSED" : "FAILED"));
+        System.out.println("\nResults: ");
+        System.out.println("Testing list 1 and 2 = " + ((equals1.equals(equals2)) ? "PASSED" : "FAILED"));
+        System.out.println("Testing list 1 and 3 = " + (!(equals1.equals(equals3)) ? "PASSED" : "FAILED"));
 
         System.out.println("====================================");
         /*====================================================*/
@@ -304,7 +357,7 @@ public class LinkedTest{
         split2 = split1.split();
 
         System.out.println("List1 after splitting: \t\t" + split1);
-        System.out.println("List2 after splitting: \t\t" + split2);
+        System.out.println("Return List (second half): \t" + split2);
 
         split3.add("node1");
         split3.add("node2");
@@ -312,11 +365,11 @@ public class LinkedTest{
         split3.add("node4");
         split3.add("node5");
 
-        System.out.println("List3 before splitting: \t" + split3);
+        System.out.println("\nList3 before splitting: \t" + split3);
         split4 = split3.split();
 
         System.out.println("List3 after splitting: \t\t" + split3);
-        System.out.println("List4 after splitting: \t\t" + split4);
+        System.out.println("Return List (second half): \t" + split4);
 
         System.out.println("====================================");
         /*====================================================*/
@@ -336,10 +389,11 @@ public class LinkedTest{
         System.out.println("After doubling:\t\t" + doubler1);
 
 
-        System.out.println("Testing empty list:");
+        System.out.println("\nTesting empty list:");
         try {
             emptyList.doubler();
         }catch (Exception e) {
+            System.out.println("\nResults: ");
             System.out.println("Null list test: \t" + " PASSED");
         }
 
@@ -360,12 +414,12 @@ public class LinkedTest{
         subList.add(6);
 
         System.out.println("Original list: \t" + subList);
-        System.out.println("Sub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
+        System.out.println("\nSub List (Indexes 3 - 5): \t" + subList.sublist(3, 5));
 
         boolean sublistFail = false;
 
         System.out.println("Sub List (Indexes 2 - 4): \t" + subList.sublist(2, 4));
-        System.out.println("Test invalid indexes (30 and 40): ");
+        System.out.println("\nTest invalid indexes (30 and 40): ");
         try{
             if(subList.sublist(30, 40) == null) {
                 sublistFail = true;
@@ -375,9 +429,9 @@ public class LinkedTest{
             }
 
         }catch(Exception e){
-            System.out.println("\nNull list test: \t" + "PASSED");
         }
 
+        System.out.println("\nResults: ");
         System.out.println("Index out of bounds test: \t" + (sublistFail ? "PASSED" : "FAILED"));
         System.out.println("====================================");
         /*
