@@ -98,8 +98,8 @@ public class LinkedTest{
         /*====================================================*/
 
         /**
-         * This tests uses
-         *
+         * This tests uses four lists and adds an element
+         * to the list including an empty list.
          */
 
         System.out.println("\n\nadd() Test:");
@@ -126,7 +126,6 @@ public class LinkedTest{
         System.out.println("3-element list: \t" + gf3);
         gf3.add("added");
         System.out.println("After adding: \t\t" + gf3);
-        System.out.println(" ");
 
         System.out.println("\nResults:");
         System.out.println("1-element test:\t\t" + ((gf1.getLast() == "added") ? "PASSED" : "FAILED"));
@@ -210,8 +209,8 @@ public class LinkedTest{
         System.out.println("List 2 Test\t\t\t" + ((af2.get(indexT+1) == "added")? "PASSED" : "FAILED"));
         System.out.println("List 3 Test\t\t\t" + ((af3.get(indexT+2) == "added")? "PASSED" : "FAILED"));
 
-        System.out.println("Invalid (Index -7) test:\t\t" + (!(emptyList.get(indexError-9) == "added")? "PASSED" : "FAILED"));
-        System.out.println("Invalid (Index 200)test:\t\t" + (!(emptyList.get(indexError+198) == "added")? "PASSED" : "FAILED"));
+        System.out.println("Invalid (Index -7) test:\t" + (!(emptyList.get(indexError-9) == "added")? "PASSED" : "FAILED"));
+        System.out.println("Invalid (Index 200)test:\t" + (!(emptyList.get(indexError+198) == "added")? "PASSED" : "FAILED"));
 
         System.out.println("====================================");
         /*====================================================*/
@@ -246,6 +245,11 @@ public class LinkedTest{
         System.out.println("------------------------------------");
         System.out.println("Testing for value of 2");
         System.out.println(" ");
+
+        MyLinkedList<Integer> lastIndexEmpty = new MyLinkedList<>();
+        System.out.println("Empty list: \t\t" + lastIndexEmpty);
+        int last = lastIndexEmpty.lastIndex("2");
+
         System.out.println("List: \t\t" + af2);
         int last1 = af2.lastIndex("2");
         System.out.println("Last index: " + last1);
@@ -256,8 +260,9 @@ public class LinkedTest{
         System.out.println("Last index: " + last2);
 
         System.out.println("\nResults:");
-        System.out.println("Test 1 " + ((last1 == 1) ? "PASSED" : "FAILED"));
-        System.out.println("Test 2 " + ((last2 == 5) ? "PASSED" : "FAILED"));
+        System.out.println("Test 1 \t\t\t\t" + ((last1 == 1) ? "PASSED" : "FAILED"));
+        System.out.println("Test 2 \t\t\t\t" + ((last2 == 5) ? "PASSED" : "FAILED"));
+        System.out.println("Test element not in list \t" + ((last == -1) ? "PASSED" : "FAILED"));
 
         System.out.println("====================================");
         /*====================================================*/
@@ -266,6 +271,7 @@ public class LinkedTest{
         System.out.println("------------------------------------");
 
         MyLinkedList<Integer> list = new MyLinkedList<>();
+        MyLinkedList<Integer> cloneEmpty = new MyLinkedList<>();
 
         list.add(1);
         list.add(2);
@@ -274,10 +280,21 @@ public class LinkedTest{
         list.add(5);
         list.add(6);
 
-        System.out.println("List: \t\t" + list);
+        System.out.println("Empty list: \t\t" + cloneEmpty);
+        MyLinkedList<Integer> emptyListClone = new MyLinkedList<>();
+        System.out.println("Cloned Empty List: \t" + emptyListClone);
+        System.out.println("\nList: \t\t" + list);
         MyLinkedList<Integer> listClone = new MyLinkedList<>();
         listClone = list.clone();
         System.out.println("Cloned List: \t" + listClone);
+
+        System.out.println("\nResults: ");
+        System.out.println("Empty list test : " + (emptyListClone.isEmpty()?"PASSED":"**FAILED**"));
+
+        if(list.size() == listClone.size()) {
+            boolean cloneListTrue = true;
+            System.out.println("Equal list test : " + (cloneListTrue ? "PASSED" : "**FAILED**"));
+        }
 
         System.out.println("====================================");
         /*====================================================*/
