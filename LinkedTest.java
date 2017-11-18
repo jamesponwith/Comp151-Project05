@@ -134,6 +134,12 @@ public class LinkedTest{
 
         System.out.println("====================================");
         /*====================================================*/
+
+        /**
+         * This tests uses four lists and adds an element
+         * to the list including an empty list.
+         */
+
         MyLinkedList<String> af = new MyLinkedList<String>();
         MyLinkedList<String> af1 = new MyLinkedList<String>();
         MyLinkedList<String> af2 = new MyLinkedList<String>();
@@ -215,6 +221,12 @@ public class LinkedTest{
         System.out.println("====================================");
         /*====================================================*/
 
+        /**
+         * This tests uses a list and sets a specified index
+         * with "added". Additionally, it tests out of bounds
+         * indexes.
+         */
+
         System.out.println("\n\nset() Test:");
         System.out.println("------------------------------------");
 
@@ -249,7 +261,9 @@ public class LinkedTest{
         MyLinkedList<Integer> lastIndexEmpty = new MyLinkedList<>();
         System.out.println("Empty list: \t\t" + lastIndexEmpty);
         int last = lastIndexEmpty.lastIndex("2");
-
+        if(last == -1) {
+            System.out.println("Last index " + "[null]");
+        }
         System.out.println("List: \t\t" + af2);
         int last1 = af2.lastIndex("2");
         System.out.println("Last index: " + last1);
@@ -266,6 +280,11 @@ public class LinkedTest{
 
         System.out.println("====================================");
         /*====================================================*/
+
+        /**
+         * This tests creates a deep copy and turns a "cloned"
+         * list.
+         */
 
         System.out.println("\n\nclone() Test:");
         System.out.println("------------------------------------");
@@ -299,6 +318,10 @@ public class LinkedTest{
         System.out.println("====================================");
         /*====================================================*/
 
+        /**
+         * This tests both elements in and not in lists.
+         */
+
         System.out.println("\n\nremoveAll() Test:");
         System.out.println("------------------------------------");
 
@@ -323,6 +346,12 @@ public class LinkedTest{
 
         System.out.println("====================================");
         /*====================================================*/
+
+        /**
+         * This tests uses four lists. The first two are equal
+         * while the third list is different. The fourth list
+         * is empty.
+         */
 
         System.out.println("\n\nequals() Test:");
         System.out.println("------------------------------------");
@@ -358,11 +387,16 @@ public class LinkedTest{
         try {
             System.out.println("List 1 and empty list = " + (!(equals1.equals(equals4)) ? "PASSED" : "FAILED"));
         } catch (Exception e) {
-            System.out.println("cannot compare to empty list");
+            System.out.println("PASSED");
         }
 
         System.out.println("====================================");
         /*====================================================*/
+
+        /**
+         * This test uses four lists testing both even and odd
+         * length lists.
+         */
 
         System.out.println("\n\nsplit() Test:");
         System.out.println("------------------------------------");
@@ -424,6 +458,11 @@ public class LinkedTest{
         System.out.println("====================================");
         /*====================================================*/
 
+        /**
+         * Tests two different sets of indexes as well as
+         * those that are outside of the range.
+         */
+
         System.out.println("\n\nsublist() Test:");
         System.out.println("------------------------------------");
 
@@ -458,6 +497,12 @@ public class LinkedTest{
         System.out.println("\nResults: ");
         System.out.println("Index out of bounds test: \t" + (sublistFail ? "PASSED" : "FAILED"));
         System.out.println("====================================");
+
+
+
+
+
+
         /*
         MyLinkedList<String> list0 = new MyLinkedList<String>();
         MyLinkedList<String> list1 = new MyLinkedList<String>();
