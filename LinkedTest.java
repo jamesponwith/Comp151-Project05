@@ -330,6 +330,7 @@ public class LinkedTest{
         MyLinkedList<String> equals1 = new MyLinkedList<String>();
         MyLinkedList<String> equals2 = new MyLinkedList<String>();
         MyLinkedList<String> equals3 = new MyLinkedList<String>();
+        MyLinkedList<String> equals4 = null; 
 
         equals1.add("Alpha");
         equals1.add("Bravo");
@@ -353,6 +354,12 @@ public class LinkedTest{
         System.out.println("\nResults: ");
         System.out.println("Testing list 1 and 2 = " + ((equals1.equals(equals2)) ? "PASSED" : "FAILED"));
         System.out.println("Testing list 1 and 3 = " + (!(equals1.equals(equals3)) ? "PASSED" : "FAILED"));
+        System.out.println("Testing list 1 and null:");
+        try {
+            System.out.println("List 1 and empty list = " + (!(equals1.equals(equals4)) ? "PASSED" : "FAILED"));
+        } catch (Exception e) {
+            System.out.println("cannot compare to empty list");
+        }
 
         System.out.println("====================================");
         /*====================================================*/
